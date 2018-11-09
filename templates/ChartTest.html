@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+<head>
+    {% block title %}Chart{% endblock %}
+</head>
+
+{% block extracss %}
+.container {
+width: 80%;
+margin: 15px auto;
+}
+{% endblock %}
+
+<body>
+{% block contents %}
+<div class="container">
+    <h2>Pie Chart (工事中)</h2>
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+</div>
+{% endblock %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+<script>
+{% block extrajs %}
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+  type: 'pie',
+  data: {
+    labels: ["M", "T", "W", "T", "F", "S", "S"],
+    datasets: [{
+      backgroundColor: [
+        "#2ecc71",
+        "#3498db",
+        "#95a5a6",
+        "#9b59b6",
+        "#f1c40f",
+        "#e74c3c",
+        "#34495e"
+      ],
+      data: [12, 19, 3, 17, 28, 24, 7]
+    }]
+  }
+});
+{% endblock %}
+
+
+</script>
+
+
+</body>
+
+
+<div class="table-sm">
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr class="table-secondary">
+            <th>年月日</th>
+            <th>名前</th>
+            <th>価格</th>
+            <th>出版社</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for index,row in df.iteritems() %}
+        <tr>
+            <td>{{ row['date'] }}</td>
+            <td>{{ row['LargeItem'] }}</td>
+            <td>{{ row['registar'] }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% csrf_token %}
+</div>
+
+

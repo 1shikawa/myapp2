@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block title %}作業工数管理（仮）{% endblock %}
+
+{% block contents %}
+
+<section class="common-form">
+    {% if form.errors %}
+    <!--<p class="error-msg">Your username and password didn't match. Please try again.</p>-->
+    {% endif %}
+    <div class="container">
+        <h2 class="text-center logo my-4">
+            <a href="#">作業工数管理（仮）</a>
+        </h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 col-sm-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h6 class="card-title">メールアドレスとパスワードを入力後、<br>ログインして下さい。</h6>
+                        <br>
+                        <form method="post">
+                            <div class="form-group">
+                                {% csrf_token %}
+                                {% bootstrap_form form %}
+                                <button type="submit" class="btn btn-primary btn-block">ログイン</button>
+                            </div>
+                        </form>
+
+                        <div class="text-center py-2">
+                            <small>
+                                <a href="{% url 'account_signup' %}" class="text-muted">ユーザー登録はこちらから</a>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+</section>
+{% endblock %}

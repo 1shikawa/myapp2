@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+<head>
+    {% block title %}入力一覧{% endblock %}
+</head>
+
+{% block extracss %}
+table {
+table-layout: fixed;
+}
+{% endblock %}
+
+<body>
+{% block contents %}
+<div class="col-md-12 main">
+    <h4 class="page-header">入力一覧</h4>
+    <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'mycalendar:DailyInputList' %}">
+        <input class="form-control mr-sm-2" type="month" min="2018-06" max="2019-12" aria-label="Search"
+               name="keyword1">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <span align="center">{{ InputCountDescription}}：{{ InputCount }}件</span>
+    </form>
+    <hr>
+    <div class="table-sm">
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr class="table-secondary">
+                <th>年月日</th>
+                <th>大項目</th>
+                <th>中項目</th>
+                <th>小項目</th>
+                <th>工数</th>
+                <th>登録者</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for input in DailyInputList %}
+            <tr>
+                <td>{{ input.date }}</td>
+                <td>{{ input.LargeItem }}</td>
+                <td>{{ input.MiddleItem }}</td>
+                <td>{{ input.SmallItem }}</td>
+                <td>{{ input.kosu }}</td>
+                <td>{{ input.register }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% csrf_token %}
+    </div>
+</div>
+
+{# ページネーション機能をインクルード #}
+{% include 'includes/pagination.html' %}
+
+{% endblock %}
+</body>

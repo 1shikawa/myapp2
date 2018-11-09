@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+<head>
+    {% block title %}カレンダー{% endblock %}
+</head>
+
+{% block extracss %}
+.month {
+font-size:22px;
+}
+
+table {
+table-layout: fixed;
+}
+
+.table td {
+border: 1px solid #eceeef;
+}
+
+td > div {
+height: 100px;
+overflow: hidden;
+white-space: nowrap;
+}
+
+.date {
+font-size:22px;
+}
+
+.exdate {
+font-size:18px;
+}
+
+#total {
+font-size:18px;
+}
+{% endblock %}
+
+<body>
+{% block contents %}
+<div class="container-fluid mt-3">
+    <div class="month" align="center">
+        <a href="{% url 'mycalendar:month_with_schedule' %}">当月</a>
+        <a href="{% url 'mycalendar:month_with_schedule' month.previous.year month.previous.month %}">＜前月</a>
+        {{ month.current | date:"Y年m月" }}
+        <a href="{% url 'mycalendar:month_with_schedule' month.next.year month.next.month %}">次月＞</a>
+    </div>
+    <table class="table">
+        <thead>
+            <tr class="table-secondary">
+                {% for w in month.week_names %}
+                <th>{{ w }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+        {% for week in month.days %}
+        <tr>
+            {% for day, schedules in week %}
+            {% if month.now == day %}
+            <td class="table-info">
+                {% else %}
+            <td>
+                {% endif %}
+
+                <div>
+                    <!--当月じゃない場合の日付表示-->
+                    {% if month.current.month != day.month %}
+                    <span class="exdate">{{ day | date:"m/d" }}</span>
+                    <!--明日以降の日付表示-->
+                    {% elif month.now < day %}
+                    <span class="date">{{ day.day }}</span>
+                    {% else %}
+                    <a class="date" href="{% url 'mycalendar:NewMultiAdd' day.year day.month day.day %}">
+                        {{ day.day }}
+                    </a>
+                    {% endif %}
+
+                    {% for schedule in schedules %}
+                    <!--登録済みあれば表示-->
+                    <p><a href="{% url 'mycalendar:NewMultiEdit'  day.year day.month day.day %}">編集</a></p>
+                    <p id="total">TOTAL：{{ schedule.totalkosu }}</p>
+                    {% endfor %}
+                </div>
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    {% if messages %}
+    {# Django のメッセージに記録している内容があればここで表示 #}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="messages mt-3">
+                    {% for message in messages %}
+                    <div class="alert alert-dismissable alert-{{ message.tags }}" data-alert="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% endblock %}
+</body>
+</html>
+
+
+

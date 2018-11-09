@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+<head>
+    {% block title %}月次集計一覧{% endblock %}
+</head>
+
+{% block extracss %}
+table {
+table-layout: fixed;
+}
+{% endblock %}
+
+<body>
+{% block contents %}
+<div class="col-md-12 main">
+    <h4 class="page-header">月次集計一覧</h4>
+    <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'mycalendar:MonthlySumList' %}">
+        <input class="form-control mr-sm-2" type="month" min="2018-01" max="2018-12" aria-label="Search"
+               name="keyword1">
+        <input class="form-control mr-sm-2" type="text" aria-label="Search" name="keyword2">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <hr>
+    <div class="table-sm">
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr class="table-secondary">
+                <th>期間</th>
+                <th>大項目</th>
+                <th>総工数</th>
+                <th>登録者</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for sum in MonthlySumList %}
+            <tr>
+                <td>{{ year_month }}</td>
+                <td>{{ sum.LargeItem__name }}</td>
+                <td>{{ sum.MonthlySum }}</td>
+                <td>{{ sum.register }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% csrf_token %}
+    </div>
+    <p>集計データを元にグラフ生成</p>
+    <a href="{% url 'mycalendar:Chart' %}" class="btn btn-success">グラフ描画</a>
+    <a href="{% url 'mycalendar:SumExport' %}" class="btn btn-primary">CSV出力</a>
+</div>
+{% endblock %}
+</body>

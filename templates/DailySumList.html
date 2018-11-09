@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+<head>
+    {% block title %}日次集計一覧{% endblock %}
+</head>
+
+{% block extracss %}
+table {
+table-layout: fixed;
+}
+{% endblock %}
+
+<body>
+{% block contents %}
+<div class="col-md-12 main">
+    <h4 class="page-header">日次集計一覧</h4>
+    <!--<form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'mycalendar:DailySumList' %}">-->
+    <!--<input class="form-control mr-sm-2" type="month" min="2018-01" max="2018-12" aria-label="Search"-->
+    <!--name="keyword1">-->
+    <!--<input class="form-control mr-sm-2" type="text" aria-label="Search" name="keyword2">-->
+    <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+    <!--</form>-->
+    <hr>
+    <div class="table-sm">
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr class="table-secondary">
+                <th>年月日</th>
+                <!--<th>大項目</th>-->
+                <th>総工数</th>
+                <th>登録者</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for sum in DailySumList %}
+            {% if sum.DailySum >= 600 %}
+            <tr class="table-danger">
+                <td>{{ sum.date }}</td>
+                <td>{{ sum.DailySum }}</td>
+                <td>{{ sum.register }}</td>
+            </tr>
+            {% elif sum.DailySum >= 500 %}
+            <tr class="table-warning">
+                <td>{{ sum.date }}</td>
+                <td>{{ sum.DailySum }}</td>
+                <td>{{ sum.register }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td>{{ sum.date }}</td>
+                <td>{{ sum.DailySum }}</td>
+                <td>{{ sum.register }}</td>
+            </tr>
+            {% endif%}
+            {% endfor %}
+            </tbody>
+        </table>
+        {% csrf_token %}
+    </div>
+</div>
+{% endblock %}
+</body>

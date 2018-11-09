@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <h1 class="page-header">ログイン</h1>
+
+
+        <div class="col-md-5">
+
+            <form action="{% url 'login' %}" method="post">
+                <div class="form-group">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input name="next" type="hidden" value="{{ next }}"/>
+                </div>
+                <button type="submit" class="btn btn-default">ログイン</button>
+            </form>
+        </div>
+
+{% endblock %}
+
+
+
+
+
+
+
+        {% extends "base.html" %}
+
+
+{% block extra_css %}
+<style type="text/css">
+    .container > .grid {
+        height: 100%;
+    }
+
+    .column {
+        max-width: 400px;
+    }
+
+    p.red.message {
+        color: #db2828;
+        margin: 0.8em 0 0 0.8em;
+        text-align: left;
+    }
+</style>
+{% endblock %}
+
+----------------------------------------------------------------------------------
+{% block contents %}
+
+{% if form.errors %}
+<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+    <p>Your account doesn't have access to this page. To proceed,
+    please login with an account that has access.</p>
+    {% else %}
+    <p>Please login to see this page.</p>
+    {% endif %}
+{% endif %}
+
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+<hr>
+<table>
+<tr>
+    <td>{{ form.username.label_tag }}</td>
+        <td>{{ form.username }}</td>
+</tr>
+<tr>
+    <td>{{ form.password.label_tag }}</td>
+    <td>{{ form.password }}</td>
+</tr>
+</table>
+
+<input type="submit" value="login" />
+<input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+{% endblock %}

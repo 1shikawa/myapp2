@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+<head>
+    {% block title %}工数入力{% endblock %}
+</head>
+
+{% block extracss %}
+.indate {
+font-size:20px;
+text-align: center;
+}
+.total {
+font-size:20px;
+text-align: right;
+}
+
+table {
+table-layout: fixed;
+}
+
+.table tr td {
+border: 1px solid #eceeef;
+}
+
+{% endblock %}
+
+<body>
+{% block contents %}
+<div>
+    <h4 class="page-header">工数入力</h4>
+    <a class="indate">{{ indate }}</a>
+    <a class="total">TOTAL：<span id="total"></span>（分）です。</a>
+</div>
+
+<form action="" method="POST">
+    {{ form.management_form }}
+    <table class="table">
+        <thead>
+        <tr class="table-secondary">
+            <th>大項目 *必須</th>
+            <th>中項目 *必須</th>
+            <th>小項目</th>
+            <th>時間(分)</th>
+            <th>備考</th>
+        </tr>
+        </thead>
+
+        <tbody id="answers">
+        {% for fm in form %}
+        {{ fm.id }}
+        {{ fm.errors }}
+        {{ fm.tag_label }}
+
+        <tr>
+            <td>{{ fm.LargeItem }}</td>
+            <td>{{ fm.MiddleItem }}</td>
+            <td>{{ fm.SmallItem }}</td>
+            <td>{{ fm.kosu }}</td>
+            <td>{{ fm.memo }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+
+    <button id="add" type="button" class="btn btn-primary" >行追加</button>
+    <button type="submit" class="btn btn-primary">送信</button>
+    <a href="{% url 'mycalendar:month_with_schedule' %}" class="btn btn-primary">戻る</a>
+    {% csrf_token %}
+</form>
+<br>
+<table class="table">
+    <thead>
+    <tr class="table-secondary">
+        <th>大項目</th>
+        <th>中項目</th>
+        <th>小項目</th>
+        <th>時間</th>
+        <th>備考</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for reg in registered %}
+    <tr>
+        <td>{{ reg.LargeItem }}</td>
+        <td>{{ reg.MiddleItem }}</td>
+        <td>{{ reg.SmallItem }}</td>
+        <td>{{ reg.kosu }}</td>
+        <td>{{ reg.memo }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
+
+</body>
+
+<script>
+{% block extrajs %}
+  // 大カテゴリpk: [[カテゴリ1pk, カテゴリ1表示名], [カテゴリ2pk, カテゴリ2表示名]]...のようになります。
+  var category = {
+    {% for li in LargeItem %}
+      {{ li.pk }}: [
+          {% for c in li.middleitem_set.all %}
+            [ {{ c.pk }}, '{{ c.name }}' ],
+          {% endfor %}
+          ],
+    {% endfor %}
+  };
+
+  $(function() {
+      // LargeItemで終わるidのもの、つまり大カテゴリ内を選択したら呼ばれる
+      $('[id$=LargeItem]').on('change', function(){
+          // [カテゴリ1pk, カテゴリ1表示名] を取得する。
+          var categories = category[this.value];
+          var option_element = '';
+          for(c of categories){
+              var pk = c[0];  // カテゴリpk
+              var text = c[1];  // カテゴリ表示名
+              option_element += '<option value=' + pk + ' >' + text + '</option>';
+          }
+          // 大カテゴリselectの親がtd要素なので、parentとし、次のtdの中にあるselectが中カテゴリとなるselect要素です。
+          var small_category_select_element = $(this).parent().next('td').find('select');
+          console.log(small_category_select_element);
+          small_category_select_element.html(option_element);
+      })
+  });
+
+
+$(function(){
+  var current_count = parseInt($('input#id_form-TOTAL_FORMS').val());
+  $('button#add').on('click', function(){
+    var element = `<tr><td><input type="text" name="form-${current_count}-LargeItem" maxlength="50" id="id_form-${current_count}-LargeItem" /></td>
+    <td><input type="text" name="form-${current_count}-MiddleItem" maxlength="50" id="id_form-${current_count}-MiddleItem" /></td>
+    <td><input type="text" name="form-${current_count}-SmallItem" maxlength="50" id="id_form-${current_count}-SmallItem" /></td>
+    <td><input type="number" name="form-${current_count}-kosu" value="0" id="id_form-${current_count}-kosu" /></td>
+    <td><input type="text" name="form-${current_count}-memo" maxlength="50" id="id_form-${current_count}-memo" /></td></tr>`;
+    $('tbody#answers').append(element);
+    current_count += 1;
+    $('input#id_form-TOTAL_FORMS').attr('value', current_count);
+
+  $('input[type="number"]').on('keyup change', function() {
+    update_field();
+  });
+
+  function update_field(){
+    var current_count = parseInt($('input#id_form-TOTAL_FORMS').val());
+    var result = Number({{ totalkosu.totalkosu }});;
+    for(var i = 0; i < current_count; i++){
+        result = result + parseInt($('#id_form-'+i+'-kosu').val()) ;
+        $('#total').text(result);
+        }
+    }
+  });
+});
+
+//入力フィード数を取得し、その数分の和を取得する処理
+function update_field(){
+    var current_count = parseInt($('input#id_form-TOTAL_FORMS').val());
+    var result = Number({{ totalkosu.totalkosu }});
+    for(var i = 0; i < current_count; i++){
+        result = result + parseInt($('#id_form-'+i+'-kosu').val()) ;
+        $('#total').text(result);
+    }
+}
+
+//入力フィールドから入力が離された時に起動
+$(function() {
+  $('input[type="number"]').on('keyup change', function() {
+    update_field();
+  });
+});
+
+
+$(document).ready(function(){
+    var result = Number({{ totalkosu.totalkosu }});
+    $('#total').text(result);
+});
+{% endblock %}
+</script>
