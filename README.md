@@ -17,4 +17,4 @@ IDE：Pycharm 2018.2.2(Community Edition),AWS Cloud9\
 その他：VirtualBox,Vagrant,Docker
 
 # ■本番Deploy運用環境
-編集中
+編集中。。
