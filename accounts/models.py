@@ -54,8 +54,8 @@ class CustomUser(AbstractUser):
     )
     # メールアドレスを必須にしてユニーク制約を付与
     email = models.EmailField(_('email address'), unique=True)
-    # 部署を必須にして
 
+    # 部署を必須にして
     # test = models.CharField(verbose_name='テスト',max_length=150,blank=True, null=True)
 
     USERNAME_FIELD = 'email'
