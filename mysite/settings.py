@@ -114,7 +114,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'start_aws_dbname', # DB名
         'USER':'start_aws_dbuser', # マスタユーザ名
-        'PASSWORD':'start_aws_db_password',# マスタパスワード
+        'PASSWORD':'start_aws_dbuser',# マスタパスワード
         'HOST':'start-aws-db-instance.cxdwl4rogkfy.us-east-2.rds.amazonaws.com',# エンドポイント
         'PORT':'3306',
     }
