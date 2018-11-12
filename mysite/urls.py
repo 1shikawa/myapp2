@@ -17,6 +17,12 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
 
+# 管理画面表示名変更
+admin.site.site_title = 'タイトルタグ' 
+admin.site.site_header = 'アプリ管理サイト' 
+admin.site.index_title = 'メニュー'
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('accounts/', include('django.contrib.auth.urls')), 認証関連ビュー有効化
