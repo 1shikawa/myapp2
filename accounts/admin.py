@@ -46,8 +46,7 @@ class CustomUserAdmin(UserAdmin):
     add_form_template = None
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
-        # (_('Personal info'), {'fields': ('first_name', 'last_name', 'test')}),
-        (_('Personal info'), {'fields': ('first_name', 'last_name')}),
+        (_('Personal info'), {'fields': ('first_name', 'last_name', 'test')}),
         (_('Permissions'), {
             'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')
         }),
