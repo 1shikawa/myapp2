@@ -203,8 +203,6 @@ LOGIN_URL = '/accounts/login/'  # 追記箇所
 LOGOUT_REDIRECT_URL = '/accounts/login/'  # 追記箇所
 # ACCOUNT_LOGOUT_REDIRECT_URL = '/accounts/login/'
 
-INTERNAL_IPS = ['127.0.0.1','192.168.33.10'] # 追記箇所
-
 DEBUG_TOOLBAR_CONFIG = { # 追記箇所
     'SHOW_TEMPLATE_CONTEXT': True,
 }

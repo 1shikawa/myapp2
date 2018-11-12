@@ -1,6 +1,6 @@
 # myapp2 作業工数管理Webアプリ
 作業担当者がどのような案件作業にどのくらいの時間をかけているのかを管理者が数値的かつ視覚的に把握できるシステム
-http://18.220.89.184/accounts/login/
+http://ishiwork.cf/accounts/login/
 
 # ■ユースケース
 ![2](https://user-images.githubusercontent.com/40058717/45882444-29232980-bde9-11e8-81b6-405812823c00.png)
