@@ -29,7 +29,7 @@ SECRET_KEY = 'cc^9(lfy_tntc6i2-y#!ff%6vkbao*c8w(3%(dmsnyjs3=v!n3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['18.220.89.184','start-aws-elb-1209002802.us-east-2.elb.amazonaws.com']
+ALLOWED_HOSTS = ['ishiwork.cf','18.220.89.184','start-aws-elb-1209002802.us-east-2.elb.amazonaws.com']
 
 
 #################
