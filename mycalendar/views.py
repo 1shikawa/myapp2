@@ -1,3 +1,4 @@
+﻿import locale
 import logging
 import csv
 import datetime
@@ -21,6 +22,7 @@ from django.db.models import Sum
 from dateutil.relativedelta import relativedelta
 import pandas as pd
 
+locale.setlocale(locale.LC_ALL, '')
 logger = logging.getLogger(__name__)
 
 #クラスベースビューの場合のデコレータ

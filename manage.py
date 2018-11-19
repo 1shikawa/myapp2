@@ -1,10 +1,10 @@
-#!/usr/bin/env python
+﻿#!/usr/bin/env python
 import os
 import sys
 
 # AWS RDS(MySql)用
-import pymysql
-pymysql.install_as_MySQLdb()
+#import pymysql
+#pymysql.install_as_MySQLdb()
 
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
