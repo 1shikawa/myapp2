@@ -220,7 +220,7 @@ class NewMultiEdit(MonthCalendarMixin, generic.FormView):
 
         kosuBydate = Schedule.objects.filter(date=date).values('date', 'register').annotate(totalkosu=Sum('kosu'))
         for i in kosuBydate:
-            if i['register'] == str(self.request.user):
+            if i['register'] == str(self.request.user).split('@')[0]:
                 total = i['totalkosu']
 
         for row in Schedule.objects.filter(date=date).filter(register=str(self.request.user).split('@')[0]):
