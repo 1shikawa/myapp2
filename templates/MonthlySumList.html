@@ -43,8 +43,10 @@ table-layout: fixed;
         </table>
         {% csrf_token %}
     </div>
-    <p>集計データを元にグラフ生成</p>
-    <a href="{% url 'mycalendar:Chart' %}" class="btn btn-success">グラフ描画</a>
+    <span>集計データを元にグラフ生成</span><br>
+    <a href="{% url 'mycalendar:Chart' %}" class="btn btn-success">グラフ描画</a><br>
+    <br>
+    <span>集計データをCSV出力</span><br>
     <a href="{% url 'mycalendar:SumExport' %}" class="btn btn-primary">CSV出力</a>
 </div>
 {% endblock %}
