@@ -109,7 +109,4 @@ venv.bak/
 /__init__.py
 /mysite/.settings.py.swp
 !/__init__.py
-/.idea/misc.xml
-/.idea/mysite.iml
-/.idea/vcs.xml
-/.idea/workspace.xml
+/.idea/*
