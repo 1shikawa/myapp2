@@ -10,8 +10,8 @@ https://docs.djangoproject.com/en/2.0/howto/deployment/wsgi/
 import os
 # gunicornでWSGIサーバを立てているため、この場合manage.pyが呼ばれてない。
 # manage.pyではなく、wsgi.pyに追記
-import pymysql
-pymysql.install_as_MySQLdb()
+# import pymysql
+# pymysql.install_as_MySQLdb()
 
 from django.core.wsgi import get_wsgi_application
 
