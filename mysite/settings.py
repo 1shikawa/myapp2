@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+# herokuデプロイ用
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -197,8 +199,9 @@ ACCOUNT_EMAIL_REQUIRED = True
 SITE_ID = 1
 
 
-# LOGIN_REDIRECT_URL = '/booklist/'  # 追記箇所
-LOGIN_REDIRECT_URL = '/month_with_schedule/'  # 追記箇所
+# Redirect to home URL after login (Default redirects to /accounts/profile/)
+LOGIN_REDIRECT_URL = '/'
+# LOGIN_REDIRECT_URL = '/month_with_schedule/'  # 追記箇所
 LOGIN_URL = '/accounts/login/'  # 追記箇所
 LOGOUT_REDIRECT_URL = '/accounts/login/'  # 追記箇所
 # ACCOUNT_LOGOUT_REDIRECT_URL = '/accounts/login/'
@@ -313,3 +316,6 @@ LOGGING = {
         # },
     },
 }
+
+# herokuデプロイ用
+django_heroku.settings(locals())
