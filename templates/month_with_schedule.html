@@ -9,14 +9,6 @@
 font-size:22px;
 }
 
-table {
-table-layout: fixed;
-}
-
-.table td {
-border: 1px solid #eceeef;
-}
-
 td > div {
 height: 100px;
 overflow: hidden;
@@ -47,7 +39,7 @@ font-size:18px;
     </div>
     <table class="table">
         <thead>
-            <tr class="table-secondary">
+            <tr class="table-primary">
                 {% for w in month.week_names %}
                 <th>{{ w }}</th>
                 {% endfor %}
@@ -58,7 +50,7 @@ font-size:18px;
         <tr>
             {% for day, schedules in week %}
             {% if month.now == day %}
-            <td class="table-info">
+            <td class="table-success">
             {% else %}
             <td>
             {% endif %}

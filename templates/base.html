@@ -20,13 +20,31 @@
 </head>
 
 <style>
-{% block extracss %}{% endblock %}
+body{
+ background-color:#edf4fb;
+}
 
+table {
+table-layout: fixed;
+}
+
+.table th {
+border: 1px solid #b4b6b8;
+}
+
+.table tr {
+border: 1px solid #b4b6b8;
+}
+
+.table td {
+border: 1px solid #b4b6b8;
+}
+
+{% block extracss %}{% endblock %}
 
 </style>
 
 <body>
-
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <a class="navbar-brand" href="{% url 'mycalendar:month_with_schedule' %}">作業工数管理（仮）</a>
