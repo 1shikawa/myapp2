@@ -13,6 +13,10 @@ font-size:20px;
 text-align: right;
 }
 
+span {
+font-size:20px;
+text-align: right;
+}
 
 {% endblock %}
 
@@ -61,6 +65,9 @@ text-align: right;
     {% csrf_token %}
 </form>
 <br>
+{% if registered %}
+<span>以下が登録済みです。</span>
+{% endif %}
 <table class="table">
     <thead>
     <tr class="table-secondary">
