@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3efbcf1c-c284-4ed5-b35e-5fc1736da38b" name="Default" comment="2018/11/18 locale setting">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/DailyInputList.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/DailyInputList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/DailySumList.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/DailySumList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/MonthlySumList.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/MonthlySumList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/month_with_schedule.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/month_with_schedule.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/multiAdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/multiAdd.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/multiEdit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/multiEdit.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,20 +59,20 @@
         <counts>
           <entry key="Procfile" value="6" />
           <entry key="gitignore" value="1" />
-          <entry key="html" value="229" />
+          <entry key="html" value="283" />
           <entry key="json" value="6" />
           <entry key="md" value="101" />
           <entry key="py" value="27" />
-          <entry key="txt" value="200" />
+          <entry key="txt" value="226" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Git file" value="1" />
-          <entry key="HTML" value="229" />
+          <entry key="HTML" value="283" />
           <entry key="JSON" value="6" />
           <entry key="Markdown" value="101" />
-          <entry key="PLAIN_TEXT" value="206" />
+          <entry key="PLAIN_TEXT" value="232" />
           <entry key="Python" value="27" />
         </counts>
       </usages-collector>
@@ -116,8 +107,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/MonthlySumList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-371">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="306">
+              <caret line="23" column="38" lean-forward="true" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -127,11 +118,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/multiAdd.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="324">
+              <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -150,11 +141,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/month_with_schedule.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+            <state relative-caret-position="324">
+              <caret line="45" column="17" lean-forward="true" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -198,8 +189,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/DailyInputList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="8" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+            <state relative-caret-position="306">
+              <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -207,8 +198,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/DailySumList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-108">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="198">
+              <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -544,13 +535,13 @@
         <option value="$PROJECT_DIR$/mycalendar/views.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/templates/account/login.html" />
-        <option value="$PROJECT_DIR$/templates/DailyInputList.html" />
-        <option value="$PROJECT_DIR$/templates/DailySumList.html" />
-        <option value="$PROJECT_DIR$/templates/MonthlySumList.html" />
-        <option value="$PROJECT_DIR$/templates/multiAdd.html" />
         <option value="$PROJECT_DIR$/templates/multiEdit.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/templates/month_with_schedule.html" />
+        <option value="$PROJECT_DIR$/templates/MonthlySumList.html" />
+        <option value="$PROJECT_DIR$/templates/DailyInputList.html" />
+        <option value="$PROJECT_DIR$/templates/DailySumList.html" />
+        <option value="$PROJECT_DIR$/templates/multiAdd.html" />
       </list>
     </option>
   </component>
@@ -918,14 +909,28 @@
       <option name="project" value="LOCAL" />
       <updated>1542699134028</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="20181121 html modify">
+      <created>1542772094346</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1542772094356</updated>
+    </task>
+    <task id="LOCAL-00024" summary="2018/11/18 locale setting">
+      <created>1542772135903</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1542772135903</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1010" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17451298" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17451298" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -935,7 +940,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4991883" visible="true" weight="0.32988507" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.4991883" visible="true" weight="0.32988507" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5024351" side_tool="true" weight="0.3188889" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49756494" weight="0.2413793" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.4991883" weight="0.32988507" />
@@ -982,9 +987,10 @@
     <MESSAGE value="2018/11/20 heroku settings" />
     <MESSAGE value="2018/11/20 views.py &#10;str(self.request.user).split('@')[0]:" />
     <MESSAGE value="2018/11/20 month_with_schedule modify" />
-    <MESSAGE value="2018/11/18 locale setting" />
     <MESSAGE value="2018/11/20 locale setting" />
-    <option name="LAST_COMMIT_MESSAGE" value="2018/11/20 locale setting" />
+    <MESSAGE value="20181121 html modify" />
+    <MESSAGE value="2018/11/18 locale setting" />
+    <option name="LAST_COMMIT_MESSAGE" value="2018/11/18 locale setting" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/static/admin/img/search.svg">
@@ -1244,34 +1250,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/DailyInputList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="8" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/DailySumList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-108">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/MonthlySumList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-371">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/multiAdd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/multiEdit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -1288,8 +1266,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/month_with_schedule.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+        <state relative-caret-position="324">
+          <caret line="45" column="17" lean-forward="true" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/DailySumList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/DailyInputList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/MonthlySumList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="23" column="38" lean-forward="true" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/multiAdd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
         </state>
       </provider>
     </entry>
