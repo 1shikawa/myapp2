@@ -59,6 +59,7 @@ border: 1px solid #b4b6b8;
             <li class="nav-item active">
                 <a class="nav-link" href="{% url 'mycalendar:DailyInputList' %}">入力一覧</a>
             </li>
+            {% if user.is_staff %}
             <li class="nav-item active">
                 <a class="nav-link" href="{% url 'mycalendar:DailySumList' %}">日次集計一覧</a>
             </li>
@@ -66,6 +67,7 @@ border: 1px solid #b4b6b8;
             <li class="nav-item active">
                 <a class="nav-link" href="{% url 'mycalendar:MonthlySumList' %}">月次集計一覧</a>
             </li>
+            {% endif %}
             <li>
                 <a class="nav-item nav-link active" href="{% url 'mycalendar:password_change' %}">パスワード変更</a>
             </li>
