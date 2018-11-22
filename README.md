@@ -1,4 +1,4 @@
-# myapp2 作業工数管理Webアプリ
+# 作業工数管理Webアプリ
 作業担当者がどのような案件作業にどのくらいの時間をかけているのかを管理者が数値的かつ視覚的に把握できるシステム\
 メイン：https://workermanagement.herokuapp.com/<br>
 管理サイト：https://workermanagement.herokuapp.com/admin<br>
