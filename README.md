@@ -20,7 +20,7 @@ IDE：Pycharm 2018.2.2(Community Edition),AWS Cloud9\
 その他：VirtualBox,Vagrant,Docker
 
 # ■本番Deploy運用環境
-編集中。。多分AWS
+![1](https://user-images.githubusercontent.com/40058717/48880920-ebc53180-ee55-11e8-9b6d-552bc315a7a0.png)
 
 # ■画面遷移
 編集中。。
