@@ -415,7 +415,7 @@ class Chart(generic.ListView):
         columns = ['date', 'LargeItem', 'kosu', 'register']
         df = pd.DataFrame(columns=columns)
         # LargeItemをラベル変換するための対応付けmap
-        mapped = {1: 'HMK・旧シス対応', 2: 'サービス対応', 3: '抽出', 4: 'PJT/案件',
+        mapped = {1: '〇〇業務', 2: '■■業務', 3: '△△業務', 4: 'PJT/案件',
                   5: '運用', 6: '障害対応', 7: '各種資料作成・入力'}
 
         for i in Schedule.objects.select_related():

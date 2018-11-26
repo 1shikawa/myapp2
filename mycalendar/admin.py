@@ -7,7 +7,17 @@ class ScheduleAdmin(admin.ModelAdmin):
     list_display_links = ('LargeItem',)  # 修正リンクでクリックできる項目
 
 
+class LargeItemAdmin(admin.ModelAdmin):
+    list_display = ('id','name',)  # 一覧に出したい項目
+    list_display_links = ('name',)  # 修正リンクでクリックできる項目
+
+
+class MiddleItemAdmin(admin.ModelAdmin):
+    list_display = ('id','name',)  # 一覧に出したい項目
+    list_display_links = ('name',)  # 修正リンクでクリックできる項目
+
+
 # admin.site.register(User, UserAdmin)
 admin.site.register(Schedule, ScheduleAdmin)
-admin.site.register(LargeItem)
-admin.site.register(MiddleItem)
+admin.site.register(LargeItem,LargeItemAdmin)
+admin.site.register(MiddleItem,MiddleItemAdmin)
