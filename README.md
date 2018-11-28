@@ -22,6 +22,9 @@ IDE：Pycharm 2018.2.2(Community Edition),AWS Cloud9\
 # ■開発運用環境
 ![1](https://user-images.githubusercontent.com/40058717/48880920-ebc53180-ee55-11e8-9b6d-552bc315a7a0.png)
 
+# ■調査検証中
+![22](https://user-images.githubusercontent.com/40058717/49131104-2e857e80-f31a-11e8-8d1a-a14eb798db66.png)
+
 # ■画面遷移
 編集中。。
 
