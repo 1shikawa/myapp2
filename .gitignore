@@ -110,3 +110,4 @@ venv.bak/
 /mysite/.settings.py.swp
 !/__init__.py
 /.idea/*
+/.idea/workspace.xml
