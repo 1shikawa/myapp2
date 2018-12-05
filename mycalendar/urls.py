@@ -67,8 +67,8 @@ urlpatterns = [
         'SumExport/', views.SumExport, name='SumExport'
     ),
 
-    # ログアウト
-    path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),
+    # ログアウト allauthを利用する場合は不要
+    path('accounts/logout/', auth_views.LogoutView.as_view(), name='account_logout'),
 
     # パスワード変更
     path('password_change/', views.PasswordChange.as_view(), name='password_change'),
