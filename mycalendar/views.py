@@ -36,7 +36,7 @@ class PasswordChange(PasswordChangeView):
 
 @method_decorator(login_required, name='dispatch')
 class PasswordChangeDone(PasswordChangeDoneView):
-    """パスワード変更しました"""
+    """パスワード変更後ビュー"""
     template_name = 'password_change_done.html'
 
 

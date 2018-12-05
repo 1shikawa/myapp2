@@ -6,16 +6,16 @@ from .models import Schedule
 
 class BaseCalendarMixin:
     """カレンダー関連Mixinの、基底クラス"""
-    first_weekday = 6  # 0は月曜から、1は火曜から。6なら日曜日からになります。お望みなら、継承したビューで指定してください。
-    # week_names = ['月', '火', '水', '木', '金', '土', '日']  # これは、月曜日から書くことを想定します。['Mon', 'Tue'...
+    first_weekday = 6  # 0は月曜から、1は火曜から。6なら日曜日からになる。
+    # week_names = ['月', '火', '水', '木', '金', '土', '日']  # これは、月曜日から書くことを想定。['Mon', 'Tue'...
     week_names = ['月', '火', '水', '木', '金', '土','日' ]
 
     def setup(self):
         """カレンダーのセットアップ処理
 
-        calendar.Calendarクラスの機能を利用するため、インスタンス化します。
+        calendar.Calendarクラスの機能を利用するためインスタンス化する。
         Calendarクラスのmonthdatescalendarメソッドを利用していますが、デフォルトが月曜日からで、
-        火曜日から表示したい(first_weekday=1)、といったケースに対応するためのセットアップ処理です。
+        火曜日から表示したい(first_weekday=1)、といったケースに対応するためのセットアップ処理。
 
         """
         self._calendar = calendar.Calendar(self.first_weekday)
@@ -91,6 +91,7 @@ class MonthWithScheduleMixin(MonthCalendarMixin):
             week_list = []
             for day in week:
                 lookup = {self.date_field: day}
+                # ログインユーザーのスケジュール情報取得
                 queryset = self.model.objects.filter(**lookup).filter(register=str(self.request.user).split('@')[0])
                 if self.order_field:
                     queryset = queryset.order_by(self.order_field)
