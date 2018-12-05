@@ -203,7 +203,7 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 # LOGIN_REDIRECT_URL = '/month_with_schedule/'  # 追記箇所
 LOGIN_URL = '/accounts/login/'  # 追記箇所
-LOGOUT_REDIRECT_URL = '/accounts/login/'  # 追記箇所
+LOGOUT_REDIRECT_URL = '/'  # 追記箇所
 # ACCOUNT_LOGOUT_REDIRECT_URL = '/accounts/login/'
 
 DEBUG_TOOLBAR_CONFIG = { # 追記箇所
