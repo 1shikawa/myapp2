@@ -4,11 +4,11 @@
 管理サイト：https://workermanagement.herokuapp.com/admin<br>
 メールアドレス：test@test.com　パスワード：test
 
-# ■ユースケース
+# ユースケース
 ![1](https://user-images.githubusercontent.com/40058717/48339609-f2141a80-e6ab-11e8-920e-ab749dda6a7a.png)
 
 
-# ■開発環境
+# 開発環境
 OS：Ubuntu 16.04 LTS (64b)\
 言語：Python 3.6.5 (64b) ,Javascript(jQuery3.3.1)\
 Webフレームワーク：Django 2.0.7\
@@ -19,16 +19,16 @@ DBサーバ：MySQL 5.7\
 IDE：Pycharm 2018.2.2(Community Edition),AWS Cloud9\
 その他：VirtualBox,Vagrant,Docker
 
-# ■開発運用環境
+# 開発運用環境
 ![1](https://user-images.githubusercontent.com/40058717/48880920-ebc53180-ee55-11e8-9b6d-552bc315a7a0.png)
 
-# ■調査検証中
+# 調査検証中
 ![22](https://user-images.githubusercontent.com/40058717/49131104-2e857e80-f31a-11e8-8d1a-a14eb798db66.png)
 
 # ■画面遷移
 編集中。。
 
-# ■画面一覧
+# 画面イメージ
 ・ログイン画面
 ![1](https://user-images.githubusercontent.com/40058717/46464857-5963c280-c802-11e8-968a-7e2001d3d29a.png)
 
