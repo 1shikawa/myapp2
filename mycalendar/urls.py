@@ -67,16 +67,10 @@ urlpatterns = [
         'SumExport/', views.SumExport, name='SumExport'
     ),
 
-    # ログアウト allauthを利用する場合は不要
-    path('accounts/logout/', auth_views.LogoutView.as_view(), name='account_logout'),
-
-    # パスワード変更
-    path('password_change/', views.PasswordChange.as_view(), name='password_change'),
-    path('password_change/done/', views.PasswordChangeDone.as_view(), name='password_change_done'),
-
-
     path('mycalendar/', views.MyCalendar.as_view(), name='mycalendar'),
     path(
         'mycalendar/<int:year>/<int:month>/<int:day>/', views.MyCalendar.as_view(), name='mycalendar'
     ),
 ]
+
+

@@ -69,7 +69,7 @@ border: 1px solid #b4b6b8;
             </li>
             {% endif %}
             <li>
-                <a class="nav-item nav-link active" href="{% url 'mycalendar:password_change' %}">パスワード変更</a>
+                <a class="nav-item nav-link active" href="{% url 'account_change_password' %}">パスワード変更</a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="{% url 'account_logout' %}">ログアウト</a>
@@ -77,6 +77,8 @@ border: 1px solid #b4b6b8;
         </ul>
         <span style="color:white;" class="navbar-text navbar-right">ログイン中：{{ user.get_username }}</span>
         {% endif %}
+    {% block navbar %}
+    {% endblock %}
     </div>
 </nav>
 
