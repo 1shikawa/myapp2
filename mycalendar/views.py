@@ -25,21 +25,21 @@ import pandas as pd
 locale.setlocale(locale.LC_ALL, '')
 logger = logging.getLogger(__name__)
 
+
+# @method_decorator(login_required, name='dispatch')
+# class PasswordChange(PasswordChangeView):
+#     """パスワード変更ビュー"""
+#     form_class = MyPasswordChangeForm
+#     success_url = reverse_lazy('mycalendar:password_change_done')
+#     template_name = 'account/password_change.html'
+#
+#
+# @method_decorator(login_required, name='dispatch')
+# class PasswordChangeDone(PasswordChangeDoneView):
+#     """パスワード変更後ビュー"""
+#     template_name = 'account/password_change_done.html'
+
 #クラスベースビューの場合のデコレータ
-@method_decorator(login_required, name='dispatch')
-class PasswordChange(PasswordChangeView):
-    """パスワード変更ビュー"""
-    form_class = MyPasswordChangeForm
-    success_url = reverse_lazy('mycalendar:password_change_done')
-    template_name = 'password_change.html'
-
-
-@method_decorator(login_required, name='dispatch')
-class PasswordChangeDone(PasswordChangeDoneView):
-    """パスワード変更後ビュー"""
-    template_name = 'password_change_done.html'
-
-
 @method_decorator(login_required, name='dispatch')
 class MonthWithScheduleCalendar(MonthWithScheduleMixin, generic.TemplateView):
     """スケジュール付きの月間カレンダーを表示するビュー"""
@@ -49,7 +49,7 @@ class MonthWithScheduleCalendar(MonthWithScheduleMixin, generic.TemplateView):
         context = super().get_context_data(**kwargs)
         """月間カレンダー情報の入った辞書を返す"""
         context['month'] = self.get_month_calendar()
-        logger.info("User:{} got month schecule.".format(str(self.request.user)))
+        logger.info("User:{} got month schecule.".format(str(self.request.user).split('@')[0]))
         return context
 
 

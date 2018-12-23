@@ -17,7 +17,6 @@ import django_heroku
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 #####################
 # Security settings #
 #####################
@@ -33,7 +32,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
 #################
 # Core settings #
 #################
@@ -47,18 +45,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites', # 追記箇所 Django-allauth
-    'allauth', # 追記箇所 Django-allauth
-    'allauth.account', # 追記箇所 Django-allauth
-    'allauth.socialaccount', # 追記箇所 Django-allauth
-    'accounts.apps.AccountsConfig', # 追記箇所 Django-allauth
+    'django.contrib.sites',  # 追記箇所 Django-allauth
+    'allauth',  # 追記箇所 Django-allauth
+    'allauth.account',  # 追記箇所 Django-allauth
+    'allauth.socialaccount',  # 追記箇所 Django-allauth
+    'accounts.apps.AccountsConfig',  # 追記箇所 Django-allauth
     'bootstrap4',  # 追記箇所
-    #'bootstrapform',  # django-bootstrap-form# 追記箇所
+    # 'bootstrapform',  # django-bootstrap-form# 追記箇所
     # 'accounts', # 追記箇所
-    'gunicorn', # 追記箇所
-    'debug_toolbar', # 追記箇所
-    'mycalendar', # 追記箇所
-   
+    'gunicorn',  # 追記箇所
+    'mycalendar',  # 追記箇所
+
 ]
 
 MIDDLEWARE = [
@@ -69,7 +66,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',# 追記箇所
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -77,7 +73,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "templates")],# 追記箇所
+        'DIRS': [os.path.join(BASE_DIR, "templates")],  # 追記箇所
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -92,15 +88,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
-
-
 ############
 # Database #
 ############
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-#DATABASES = {
+# DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.postgresql_psycopg2',
 #        'NAME': 'mysite',
@@ -109,9 +103,9 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #        'HOST':'localhost',
 #        'PORT':'',
 #    }
-#}
+# }
 
-#DATABASES = {
+# DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.mysql',
 #        'NAME': 'start_aws_dbname', # DB名
@@ -120,16 +114,14 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #        'HOST':'start-aws-db-instance.cxdwl4rogkfy.us-east-2.rds.amazonaws.com',# エンドポイント
 #        'PORT':'3306',
 #    }
-#}
+# }
 
 DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.sqlite3',
-       'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-   }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
-
-
 
 #######################
 # Password validation #
@@ -175,7 +167,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-#STATIC_ROOT = '/var/www/static'
+# STATIC_ROOT = '/var/www/static'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
@@ -183,21 +175,23 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 ##################
 # Authentication #
 ##################
-AUTH_USER_MODEL = 'accounts.CustomUser' # 追記箇所
+# 定義済み拡張ユーザーモデルを利用
+AUTH_USER_MODEL = 'accounts.CustomUser'
 
 # 認証方式を「メールアドレスとパスワード」に変更
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 # ユーザー名は使用しない
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+# ログアウト確認を非表示
+ACCOUNT_LOGOUT_ON_GET = True
 
 # ユーザー登録確認メールは送信しない
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 # メールアドレスを必須項目にする
 ACCOUNT_EMAIL_REQUIRED = True
 
 SITE_ID = 1
-
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 LOGIN_REDIRECT_URL = '/'
@@ -206,16 +200,12 @@ LOGIN_URL = '/accounts/login/'  # 追記箇所
 LOGOUT_REDIRECT_URL = '/'  # 追記箇所
 # ACCOUNT_LOGOUT_REDIRECT_URL = '/accounts/login/'
 
-DEBUG_TOOLBAR_CONFIG = { # 追記箇所
-    'SHOW_TEMPLATE_CONTEXT': True,
-}
 
 ############
 # Messages #
 ############
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
-
 
 ##################
 # Email settings #
@@ -224,7 +214,7 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ###########
-# Logging 本番用#
+# Logging 本番用 #
 ###########
 
 # LOGGING = {
@@ -269,7 +259,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 ###########
-# Logging 開発用#
+# Logging #
 ###########
 
 LOGGING = {
@@ -316,6 +306,90 @@ LOGGING = {
         # },
     },
 }
+
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'filters': {
+#         'require_debug_false': {
+#             '()': 'django.utils.log.RequireDebugFalse',
+#         },
+#         'require_debug_true': {
+#             '()': 'django.utils.log.RequireDebugTrue',
+#         },
+#     },
+#     'formatters': {
+#         'django.server': {
+#             '()': 'django.utils.log.ServerFormatter',
+#             'format': '[%(server_time)s] %(message)s a',
+#         },
+#         'verbose': {
+#             'format': '%(levelname)s %(asctime)s %(module)s '
+#                       '%(process)d %(thread)d %(message)s'
+#         },
+#     },
+#     'handlers': {
+#         'console': {
+#             'level': 'INFO',
+#             'filters': ['require_debug_true'],
+#             'class': 'logging.StreamHandler',
+#             'formatter': 'verbose',
+#         },
+#         'django.server': {
+#             'level': 'INFO',
+#             'class': 'logging.StreamHandler',
+#             'formatter': 'django.server',
+#         },
+#         'mail_admins': {
+#             'level': 'ERROR',
+#             'filters': ['require_debug_false'],
+#             'class': 'django.utils.log.AdminEmailHandler'
+#         }
+#     },
+#     'loggers': {
+#         'django': {
+#             'handlers': ['console', 'mail_admins'],
+#             'level': 'INFO',
+#         },
+#         'django.server': {
+#             'handlers': ['django.server'],
+#             'level': 'INFO',
+#             'propagate': False,
+#         },
+#         #追加
+#         'myapp': {
+#             'handlers': ['console'],
+#             'level': 'INFO',
+#             'propagate': False,
+#         },
+#     }
+# }
+
+#################
+# debug toolbar #
+#################
+if DEBUG:
+    def show_toolbar(request):
+        return True
+
+    INSTALLED_APPS += (
+        'debug_toolbar',
+    )
+    MIDDLEWARE += (
+        'debug_toolbar.middleware.DebugToolbarMiddleware',
+    )
+    DEBUG_TOOLBAR_CONFIG = {
+        'SHOW_TOOLBAR_CALLBACK': show_toolbar,
+    }
+
+###########
+# SendGrid setting #
+###########
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'sendgrid_username'
+EMAIL_HOST_PASSWORD = 'sendgrid_password'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 # herokuデプロイ用
 django_heroku.settings(locals())
