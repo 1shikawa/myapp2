@@ -207,11 +207,6 @@ LOGOUT_REDIRECT_URL = '/'  # 追記箇所
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
-##################
-# Email settings #
-##################
-
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ###########
 # Logging 本番用 #
@@ -259,7 +254,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 ###########
-# Logging #
+# Logging 開発用 #
 ###########
 
 LOGGING = {
@@ -307,63 +302,6 @@ LOGGING = {
     },
 }
 
-# LOGGING = {
-#     'version': 1,
-#     'disable_existing_loggers': False,
-#     'filters': {
-#         'require_debug_false': {
-#             '()': 'django.utils.log.RequireDebugFalse',
-#         },
-#         'require_debug_true': {
-#             '()': 'django.utils.log.RequireDebugTrue',
-#         },
-#     },
-#     'formatters': {
-#         'django.server': {
-#             '()': 'django.utils.log.ServerFormatter',
-#             'format': '[%(server_time)s] %(message)s a',
-#         },
-#         'verbose': {
-#             'format': '%(levelname)s %(asctime)s %(module)s '
-#                       '%(process)d %(thread)d %(message)s'
-#         },
-#     },
-#     'handlers': {
-#         'console': {
-#             'level': 'INFO',
-#             'filters': ['require_debug_true'],
-#             'class': 'logging.StreamHandler',
-#             'formatter': 'verbose',
-#         },
-#         'django.server': {
-#             'level': 'INFO',
-#             'class': 'logging.StreamHandler',
-#             'formatter': 'django.server',
-#         },
-#         'mail_admins': {
-#             'level': 'ERROR',
-#             'filters': ['require_debug_false'],
-#             'class': 'django.utils.log.AdminEmailHandler'
-#         }
-#     },
-#     'loggers': {
-#         'django': {
-#             'handlers': ['console', 'mail_admins'],
-#             'level': 'INFO',
-#         },
-#         'django.server': {
-#             'handlers': ['django.server'],
-#             'level': 'INFO',
-#             'propagate': False,
-#         },
-#         #追加
-#         'myapp': {
-#             'handlers': ['console'],
-#             'level': 'INFO',
-#             'propagate': False,
-#         },
-#     }
-# }
 
 #################
 # debug toolbar #
@@ -383,13 +321,13 @@ if DEBUG:
     }
 
 ###########
-# SendGrid setting #
+# Email SendGrid setting #
 ###########
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'sendgrid_username'
-EMAIL_HOST_PASSWORD = 'sendgrid_password'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'sendgrid_backend.SendgridBackend'
+EMAIL_HOST = 'ishi-work.ml'
+DEFAULT_FROM_EMAIL ='notify@ishi-work.ml'
+SENDGRID_API_KEY = os.environ['SENDGRID_API_KEY']
+SENDGRID_SANDBOX_MODE_IN_DEBUG = False
 
 # herokuデプロイ用
 django_heroku.settings(locals())
