@@ -325,7 +325,7 @@ if DEBUG:
 ###########
 EMAIL_BACKEND = 'sendgrid_backend.SendgridBackend'
 EMAIL_HOST = 'ishi-work.ml'
-DEFAULT_FROM_EMAIL ='notify@ishi-work.ml'
+DEFAULT_FROM_EMAIL = SERVER_EMAIL = 'notify@ishi-work.ml'
 SENDGRID_API_KEY = os.environ['SENDGRID_API_KEY']
 SENDGRID_SANDBOX_MODE_IN_DEBUG = False
 
