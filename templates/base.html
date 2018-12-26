@@ -1,5 +1,13 @@
 {% load staticfiles %}
+{# Load the tag library #}
 {% load bootstrap4 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='slim' %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
 
 <!DOCTYPE html>
 <html lang="ja">
