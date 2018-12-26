@@ -3,9 +3,10 @@
 メイン：https://workermanagement.herokuapp.com/<br>
 管理サイト：https://workermanagement.herokuapp.com/admin<br>
 メールアドレス：test@test.com　パスワード：test
+AWS環境：https://ishi-work.ml
 
 # ユースケース
-![1](https://user-images.githubusercontent.com/40058717/48339609-f2141a80-e6ab-11e8-920e-ab749dda6a7a.png)
+![1](https://user-images.githubusercontent.com/40058717/50438618-13665880-0932-11e9-8d35-3e118cdfbde0.png)
 
 
 # 開発環境
