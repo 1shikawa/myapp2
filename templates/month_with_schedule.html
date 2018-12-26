@@ -31,23 +31,24 @@ font-size:18px;
 <body>
 {% block contents %}
 
-    {% if messages %}
+{#    {% if messages %}#}
     {# Django のメッセージに記録している内容があればここで表示 #}
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="messages mt-3">
-                    {% for message in messages %}
-                    <div class="alert alert-dismissable alert-{{ message.tags }}" data-alert="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        {{ message }}
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </div>
-    {% endif %}
+{#    <div class="container">#}
+{#        <div class="row">#}
+{#            <div class="col-12">#}
+{#                <div class="messages mt-3">#}
+{#                    {% for message in messages %}#}
+{#                    <div class="alert alert-dismissable alert-{{ message.tags }}" data-alert="alert">#}
+{#                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>#}
+{#                        {{ message }}#}
+{#                    </div>#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#    {% endif %}#}
+
 <div class="container-fluid mt-3">
     <div class="month" align="center">
         <a href="{% url 'mycalendar:month_with_schedule' %}">当月</a>

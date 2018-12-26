@@ -7,7 +7,7 @@
 {% bootstrap_javascript jquery='slim' %}
 
 {# Display django.contrib.messages as Bootstrap alerts #}
-{% bootstrap_messages %}
+{#{% bootstrap_messages %}#}
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -90,11 +90,8 @@ border: 1px solid #b4b6b8;
     </div>
 </nav>
 
-<!--{% if user.is_authenticated %}-->
-<!--<p align="right">{{ user.get_username }}でログイン中</p>-->
-<!--{% else %}-->
-<!--<div>ログインしていません</div>-->
-<!--{% endif %}-->
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
 
 <div class="container-fluid">
     {% block contents %}
