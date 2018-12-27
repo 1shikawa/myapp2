@@ -326,8 +326,10 @@ if DEBUG:
 EMAIL_BACKEND = 'sendgrid_backend.SendgridBackend'
 EMAIL_HOST = 'ishi-work.ml'
 DEFAULT_FROM_EMAIL = SERVER_EMAIL = 'notify@ishi-work.ml'
-SENDGRID_API_KEY = os.environ['SENDGRID_API_KEY']
+# SENDGRID_API_KEY = os.environ['SENDGRID_API_KEY']
+SENDGRID_API_KEY = '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'
 SENDGRID_SANDBOX_MODE_IN_DEBUG = False
+
 
 # herokuデプロイ用
 django_heroku.settings(locals())
