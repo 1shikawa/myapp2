@@ -1,90 +1,72 @@
 from django.test import TestCase
-from mycalendar.models import Schedule
 from accounts.models import CustomUser
+from mycalendar.models import Schedule
+from django.shortcuts import reverse
 
-# @python_2_unicode_compatible
-class mycalendarViewTests(TestCase):
+class ScheduleTest(TestCase):
+
     @classmethod
-    def setUp(cls):
+    def setUpTestData(cls):
+        print('mycalendar/test_views is starterd.')
+        CustomUser.objects.create_user(email='ishitest@test.com', password='test1234')
+
+    def setUp(self):
         """
-        テスト実行前の処理
-        ログイン可能なユーザを1名追加
+        setUpTestDataで登録したユーザーでログイン
         """
-        CustomUser.objects.create_user(email='ishitest@test.com',
-                                     password='test1234')
-    def test_schedule(self):
+        client = self.client
+        client.login(email='ishitest@test.com', password='test1234')
+
+    @classmethod
+    def tearDownClass(cls):
+        print('mycalendar/test_views is end.')
+
+    def test_get_schedule_nodata(self):
         """
-        schedule登録データはなし
+        schedule登録データがないことを検証
         """
         schedule_data = Schedule.objects.all().count()
         self.assertEqual(schedule_data, 0)
 
-    def test_index(self):
+    def test_get_navlink(self):
         """
-        indexの画面へアクセスできるかどうか
-        この画面はログインしているユーザでないとアクセス不可
+        各navリンクへアクセスできることを検証
         """
-        client = self.client
-
-        # ログイン画面が表示されるかどうか
-        response = client.get('/accounts/login/')
-        # ステータスコード：200が返却され画面にアクセスできる
+        response = self.client.get('/month_with_schedule/')
         self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'month_with_schedule.html')
 
-        # setUpで追加しておいたユーザでログイン
-        client.login(email='ishitest@test.com', password='test1234')
-        # ログインしているユーザがアクセスした場合
-        response = client.get('/')
-        # ステータスコード：301が返却されリダイレクトされる
-        self.assertEqual(response.status_code, 301)
+        response = self.client.get('/DailyInputList/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'DailyInputList.html')
 
-    def test_view_uses_correct_template(self):
-        client = self.client
-        resp = self.client.get('/')
-        self.assertEqual(resp.status_code, 301)
-        resp = client.get('/accounts/login/')
-        self.assertEqual(resp.status_code, 200)
-        client.login(email='ishitest@test.com', password='test1234')
+        response = self.client.get('/DailySumList/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'DailySumList.html')
+
+        response = self.client.get('/MonthlySumList/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'MonthlySumList.html')
+
+        response = self.client.get('/accounts/password/change/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'account/password_change.html')
+
+        response = self.client.get('/accounts/logout/')
+        self.assertEqual(response.status_code, 302)
+        # self.assertTrue(response.url.startswith('/month_with'))
+
+    def test_get_schedule(self):
+        response = self.client.get('/month_with_schedule/NewMultiAdd/2018/12/31')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'multiAdd.html')
+
+        response = self.client.get('/month_with_schedule/NewMultiEdit/2018/12/1')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'multiEdit.html')
 
 
-# class AuthorListViewTest(TestCase):
-#
-#     @classmethod
-#     def setUpTestData(cls):
-#         Create authors for pagination tests
-#         number_of_authors = 13
-#         for author_num in range(number_of_authors):
-#             # Author.objects.create(first_name='Christian %s' % author_num, last_name = 'Surname %s' % author_num,)
-#             Author.objects.create(first_name='Christian {0}'.format(author_num),
-#                                   last_name='Surname {0}'.format(author_num))
-#
-#     def test_view_url_exists_at_desired_location(self):
-#         resp = self.client.get('/catalog/authors/')
-#         self.assertEqual(resp.status_code, 200)
-#
-#     def test_view_url_accessible_by_name(self):
-#         resp = self.client.get(reverse('authors'))
-#         self.assertEqual(resp.status_code, 200)
-#
-#     def test_view_uses_correct_template(self):
-#         resp = self.client.get(reverse('authors'))
-#         self.assertEqual(resp.status_code, 200)
-#         self.assertTemplateUsed(resp, 'catalog/author_list.html')
-#
-#     def test_pagination_is_ten(self):
-#         resp = self.client.get(reverse('authors'))
-#         self.assertEqual(resp.status_code, 200)
-#         self.assertTrue('is_paginated' in resp.context)
-#         self.assertTrue(resp.context['is_paginated'] == True)
-#         self.assertTrue(len(resp.context['author_list']) == 10)
-#
-#     def test_lists_all_authors(self):
-#         # Get second page and confirm it has (exactly) the remaining 3 items
-#         resp = self.client.get(reverse('authors') + '?page=2')
-#         self.assertEqual(resp.status_code, 200)
-#         self.assertTrue('is_paginated' in resp.context)
-#         self.assertTrue(resp.context['is_paginated'] == True)
-#         self.assertTrue(len(resp.context['author_list']) == 3)
+
 
 #
 # import datetime
@@ -126,6 +108,8 @@ class mycalendarViewTests(TestCase):
 #             BookInstance.objects.create(book=test_book, imprint='Unlikely Imprint, 2016', due_back=return_date,
 #                                         borrower=the_borrower, status=status)
 #
+
+
 #     def test_redirect_if_not_logged_in(self):
 #         resp = self.client.get(reverse('my-borrowed'))
 #         self.assertRedirects(resp, '/accounts/login/?next=/catalog/mybooks/')
@@ -373,20 +357,4 @@ class mycalendarViewTests(TestCase):
 #         resp = self.client.get(reverse('author_create'))
 #         self.assertEqual(resp.status_code, 200)
 #         self.assertTemplateUsed(resp, 'catalog/author_form.html')
-#
-#     def test_form_date_of_death_initially_set_to_expected_date(self):
-#         login = self.client.login(username='testuser2', password='12345')
-#         resp = self.client.get(reverse('author_create'))
-#         self.assertEqual(resp.status_code, 200)
-#
-#         expected_initial_date = datetime.date(2018, 1, 5)
-#         response_date = resp.context['form'].initial['date_of_death']
-#         response_date = datetime.datetime.strptime(response_date, "%d/%m/%Y").date()
-#         self.assertEqual(response_date, expected_initial_date)
-#
-#     def test_redirects_to_detail_view_on_success(self):
-#         login = self.client.login(username='testuser2', password='12345')
-#         resp = self.client.post(reverse('author_create'), {'first_name': 'Christian Name', 'last_name': 'Surname', })
-#         # Manually check redirect because we don't know what author was created
-#         self.assertEqual(resp.status_code, 302)
-#         self.assertTrue(resp.url.startswith('/catalog/author/'))
+

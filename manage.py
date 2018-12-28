@@ -7,9 +7,9 @@ import sys
 #pymysql.install_as_MySQLdb()
 
 if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.local_settings")
 
-    # この以下の2行を追加する!
+    # mysql文字長対応で以下の2行を追加する!
     from django.db.backends.mysql.schema import DatabaseSchemaEditor
     DatabaseSchemaEditor.sql_create_table += " ROW_FORMAT=DYNAMIC"
 

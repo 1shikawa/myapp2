@@ -27,13 +27,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('accounts/', include('django.contrib.auth.urls')), 認証関連ビュー有効化
     path('accounts/', include('allauth.urls')),  # Django-allauth利用
-    path('month_with_schedule/', include('mycalendar.urls', namespace='mycalendar')),
+    path('', include('mycalendar.urls', namespace='mycalendar')),
 ]
 
 #Add URL maps to redirect the base URL to our application
 from django.views.generic import RedirectView
 urlpatterns += [
-    path('', RedirectView.as_view(url='/month_with_schedule/', permanent=True)),
+    path('', RedirectView.as_view(url='/accounts/login', permanent=True)),
 ]
 
 
@@ -41,5 +41,4 @@ if settings.DEBUG:
     import debug_toolbar
     urlpatterns = [
         path('__debug__/', include(debug_toolbar.urls)),
-        path('', include('mycalendar.urls', namespace='mycalendar')),
     ] + urlpatterns
