@@ -28,7 +28,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'cc^9(lfy_tntc6i2-y#!ff%6vkbao*c8w(3%(dmsnyjs3=v!n3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -326,8 +326,8 @@ if DEBUG:
 EMAIL_BACKEND = 'sendgrid_backend.SendgridBackend'
 EMAIL_HOST = 'ishi-work.ml'
 DEFAULT_FROM_EMAIL = SERVER_EMAIL = 'notify@ishi-work.ml'
-# SENDGRID_API_KEY = os.environ['SENDGRID_API_KEY']
-SENDGRID_API_KEY = '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'
+SENDGRID_API_KEY = os.environ['SENDGRID_API_KEY']
+# SENDGRID_API_KEY = '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'
 SENDGRID_SANDBOX_MODE_IN_DEBUG = False
 
 

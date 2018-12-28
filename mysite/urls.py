@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path, include
 from django.conf import settings
 
 # 管理画面表示名変更
@@ -39,7 +39,7 @@ urlpatterns += [
 
 if settings.DEBUG:
     import debug_toolbar
-    urlpatterns = [
+
+    urlpatterns += [
         path('__debug__/', include(debug_toolbar.urls)),
-        path('', include('mycalendar.urls', namespace='mycalendar')),
-    ] + urlpatterns
+    ]
