@@ -2,8 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3efbcf1c-c284-4ed5-b35e-5fc1736da38b" name="Default" comment="2018/12/26 test_models.py add">
+      <change afterPath="$PROJECT_DIR$/accounts/tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/tests/test_forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/tests/test_models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/tests/test_views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mycalendar/tests/test_forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/mycalendar/tests/test_forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mycalendar/tests/test_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mycalendar/tests/test_models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mycalendar/tests/test_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mycalendar/tests/test_views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mycalendar/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mycalendar/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/DailyInputList.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/DailyInputList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/logged_out.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/logged_out.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,32 +26,53 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/myapp2$_in_bin.coverage" NAME="ユニットテスト in myapp2 Coverage Results" MODIFIED="1545901161113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_models_LargeItemTest_test_LargeItem_label.coverage" NAME="Test: mycalendar.tests.test_models.LargeItemTest.test_LargeItem_label Coverage Results" MODIFIED="1545902685837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/myapp2$.coverage" NAME="Django test Coverage Results" MODIFIED="1545960836049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_models_MiddleItemTest.coverage" NAME="Test: mycalendar.tests.test_models.MiddleItemTest Coverage Results" MODIFIED="1545904069328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_models_ScheduleModelTest_test_Schedule_date_label.coverage" NAME="Test: mycalendar.tests.test_models.ScheduleModelTest.test_Schedule_date_label Coverage Results" MODIFIED="1545920479532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__accounts_tests_test_views_accountsViewTests_test_get_login_by_autheticated_user.coverage" NAME="Test: accounts.tests.test_views.accountsViewTests.test_get_login_by_autheticated_user Coverage Results" MODIFIED="1546017845982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$.coverage" NAME="Django test Coverage Results" MODIFIED="1546020930499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_views_mycalendarViewTests_test_index.coverage" NAME="Test: mycalendar.tests.test_views.mycalendarViewTests.test_index Coverage Results" MODIFIED="1546009783566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_models_ScheduleModelTest_test_Schedule_value_date.coverage" NAME="Test: mycalendar.tests.test_models.ScheduleModelTest.test_Schedule_value_date Coverage Results" MODIFIED="1545921134650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__accounts_tests_test_views.coverage" NAME="Test: accounts.tests.test_views Coverage Results" MODIFIED="1546015723313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_views_ScheduleTest_test_get_password_change.coverage" NAME="Test: mycalendar.tests.test_views.ScheduleTest.test_get_password_change Coverage Results" MODIFIED="1546020100073" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_models_ScheduleModelTest_test_Schedule_value_register.coverage" NAME="Test: mycalendar.tests.test_models.ScheduleModelTest.test_Schedule_value_register Coverage Results" MODIFIED="1545920898953" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_models_ScheduleModelTest_test_Schedule_label.coverage" NAME="Test: mycalendar.tests.test_models.ScheduleModelTest.test_Schedule_label Coverage Results" MODIFIED="1545919145291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_models_CustomUserModelTest.coverage" NAME="Test: mycalendar.tests.test_models.CustomUserModelTest Coverage Results" MODIFIED="1545901311305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_models_ScheduleModelTest_test_Schedule_register_label.coverage" NAME="Test: mycalendar.tests.test_models.ScheduleModelTest.test_Schedule_register_label Coverage Results" MODIFIED="1545920431213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_models_ScheduleModelTest_test_Schedule_value.coverage" NAME="Test: mycalendar.tests.test_models.ScheduleModelTest.test_Schedule_value Coverage Results" MODIFIED="1545920686511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_models.coverage" NAME="Test: mycalendar.tests.test_models Coverage Results" MODIFIED="1545960897844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_views_mycalendarViewTests_test_get_login_by_autheticated_user.coverage" NAME="Test: mycalendar.tests.test_views.mycalendarViewTests.test_get_login_by_autheticated_user Coverage Results" MODIFIED="1546011268214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_forms.coverage" NAME="Test: mycalendar.tests.test_forms Coverage Results" MODIFIED="1546013033891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_views_mycalendarViewTests_test_get_login_autheticated_user.coverage" NAME="Test: mycalendar.tests.test_views.mycalendarViewTests.test_get_login_autheticated_user Coverage Results" MODIFIED="1546010950044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_views_ScheduleTest_test_get_navlink.coverage" NAME="Test: mycalendar.tests.test_views.ScheduleTest.test_get_navlink Coverage Results" MODIFIED="1546023115775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_models_CustomUserModelTest_test_email_value.coverage" NAME="Test: mycalendar.tests.test_models.CustomUserModelTest.test_email_value Coverage Results" MODIFIED="1545901122802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_models_LargeItemModelTest.coverage" NAME="Test: mycalendar.tests.test_models.LargeItemModelTest Coverage Results" MODIFIED="1545902543760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_models_LargeItemTest.coverage" NAME="Test: mycalendar.tests.test_models.LargeItemTest Coverage Results" MODIFIED="1545903506184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_models_ScheduleModelTest.coverage" NAME="Test: mycalendar.tests.test_models.ScheduleModelTest Coverage Results" MODIFIED="1545920256870" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_models_LargeItemModelTest_test_LargeItem_label.coverage" NAME="Test: mycalendar.tests.test_models.LargeItemModelTest.test_LargeItem_label Coverage Results" MODIFIED="1545902465921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/myapp2$pytest_in_bin.coverage" NAME="pytest in myapp2 Coverage Results" MODIFIED="1545901177048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_views.coverage" NAME="Test: mycalendar.tests.test_views Coverage Results" MODIFIED="1545961067576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_models_ScheduleModelTest.coverage" NAME="Test: mycalendar.tests.test_models.ScheduleModelTest Coverage Results" MODIFIED="1546015383894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__accounts_tests_test_forms.coverage" NAME="Test: accounts.tests.test_forms Coverage Results" MODIFIED="1546015567116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_views_ScheduleTest_test_get_schedule_nodata.coverage" NAME="Test: mycalendar.tests.test_views.ScheduleTest.test_get_schedule_nodata Coverage Results" MODIFIED="1546016447743" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$pytest_in_bin.coverage" NAME="pytest in tests Coverage Results" MODIFIED="1545979532185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_views_mycalendarViewTests_test_view_uses_correct_template.coverage" NAME="Test: mycalendar.tests.test_views.mycalendarViewTests.test_view_uses_correct_template Coverage Results" MODIFIED="1545966141194" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_views_ScheduleTest_test_get_schedule.coverage" NAME="Test: mycalendar.tests.test_views.ScheduleTest.test_get_schedule Coverage Results" MODIFIED="1546023420014" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_views_mycalendarViewTests_test_get_index.coverage" NAME="Test: mycalendar.tests.test_views.mycalendarViewTests.test_get_index Coverage Results" MODIFIED="1546010015272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_views_mycalendarViewTests_test_post_with_same_username.coverage" NAME="Test: mycalendar.tests.test_views.mycalendarViewTests.test_post_with_same_username Coverage Results" MODIFIED="1546012695771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__accounts_tests_test_models.coverage" NAME="Test: accounts.tests.test_models Coverage Results" MODIFIED="1546015628416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_views_ScheduleTest.coverage" NAME="Test: mycalendar.tests.test_views.ScheduleTest Coverage Results" MODIFIED="1546020443668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$_in_bin.coverage" NAME="ユニットテスト in tests Coverage Results" MODIFIED="1545979519218" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_models_MiddleItemTest.coverage" NAME="Test: mycalendar.tests.test_models.MiddleItemTest Coverage Results" MODIFIED="1546015099660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_models_ScheduleModelTest_test_Schedule_date_label.coverage" NAME="Test: mycalendar.tests.test_models.ScheduleModelTest.test_Schedule_date_label Coverage Results" MODIFIED="1545920479532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_models_ScheduleModelTest_test_Schedule_label.coverage" NAME="Test: mycalendar.tests.test_models.ScheduleModelTest.test_Schedule_label Coverage Results" MODIFIED="1545919145291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_models_ScheduleModelTest_test_Schedule_register_label.coverage" NAME="Test: mycalendar.tests.test_models.ScheduleModelTest.test_Schedule_register_label Coverage Results" MODIFIED="1545920431213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_models_ScheduleModelTest_test_Schedule_value.coverage" NAME="Test: mycalendar.tests.test_models.ScheduleModelTest.test_Schedule_value Coverage Results" MODIFIED="1545920686511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_models_CustomUserModelTest.coverage" NAME="Test: mycalendar.tests.test_models.CustomUserModelTest Coverage Results" MODIFIED="1545979098216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_models.coverage" NAME="Test: mycalendar.tests.test_models Coverage Results" MODIFIED="1546023609306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_views_mycalendarViewTests_test_get_by_unauthenticated_user.coverage" NAME="Test: mycalendar.tests.test_views.mycalendarViewTests.test_get_by_unauthenticated_user Coverage Results" MODIFIED="1546009750196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_models_LargeItemTest.coverage" NAME="Test: mycalendar.tests.test_models.LargeItemTest Coverage Results" MODIFIED="1546015137711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_models_LargeItemModelTest_test_LargeItem_label.coverage" NAME="Test: mycalendar.tests.test_models.LargeItemModelTest.test_LargeItem_label Coverage Results" MODIFIED="1545902465921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_views.coverage" NAME="Test: mycalendar.tests.test_views Coverage Results" MODIFIED="1546023595074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_views_mycalendarViewTests_test_get_signup_success.coverage" NAME="Test: mycalendar.tests.test_views.mycalendarViewTests.test_get_signup_success Coverage Results" MODIFIED="1546011901282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_models_MiddleItemTest_test_MiddleItem_value.coverage" NAME="Test: mycalendar.tests.test_models.MiddleItemTest.test_MiddleItem_value Coverage Results" MODIFIED="1545918985302" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_views_mycalendarViewTests.coverage" NAME="Test: mycalendar.tests.test_views.mycalendarViewTests Coverage Results" MODIFIED="1545961447222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_views_mycalendarViewTests.coverage" NAME="Test: mycalendar.tests.test_views.mycalendarViewTests Coverage Results" MODIFIED="1546009470072" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/myapp2$test.coverage" NAME="test Coverage Results" MODIFIED="1545900618030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mycalendar/tests" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__accounts.coverage" NAME="Test: accounts Coverage Results" MODIFIED="1546008925912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_views_mycalendarViewTests_test_post_signup_success.coverage" NAME="Test: mycalendar.tests.test_views.mycalendarViewTests.test_post_signup_success Coverage Results" MODIFIED="1546012218300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_forms_accountFormTest.coverage" NAME="Test: mycalendar.tests.test_forms.accountFormTest Coverage Results" MODIFIED="1546013586885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp2$Test__mycalendar_tests_test_views_mycalendarViewTests_test_get_index_by_autheticated_user.coverage" NAME="Test: mycalendar.tests.test_views.mycalendarViewTests.test_get_index_by_autheticated_user Coverage Results" MODIFIED="1546011750730" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="275" />
+    <option name="myElementSize" value="502" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -55,11 +90,6 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="db" type="feb32156:DbDataSourceImpl" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db" type="feb32156:DbDataSourceImpl" />
-        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-      </path>
     </expand>
     <select />
   </component>
@@ -71,8 +101,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mycalendar/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+            <state relative-caret-position="261">
+              <caret line="302" selection-start-line="302" selection-end-line="302" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -81,39 +111,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="180">
-                <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-              </first_editor>
-              <second_editor>
-                <markdownNavigatorState />
-              </second_editor>
-            </state>
-          </provider>
-          <provider editor-type-id="Gfm" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-107">
-              <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+            <state relative-caret-position="504">
+              <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/accounts/tests.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mycalendar/tests/test_models.py">
+        <entry file="file://$PROJECT_DIR$/accounts/tests/test_models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-612">
-              <caret line="56" selection-start-line="56" selection-end-line="56" />
+            <state relative-caret-position="126">
+              <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="49" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -146,23 +156,26 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mycalendar/tests/test_forms.py">
+        <entry file="file://$PROJECT_DIR$/accounts/tests/test_forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
+            <state relative-caret-position="108">
+              <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="48" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mycalendar/tests/__init__.py">
+        <entry file="file://$PROJECT_DIR$/accounts/tests/__init__.py">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/accounts/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
+            <state relative-caret-position="215">
               <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
               <folding>
                 <element signature="e#0#68#0" expanded="true" />
@@ -172,15 +185,88 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mycalendar/tests/test_views.py">
+        <entry file="file://$PROJECT_DIR$/accounts/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="792">
-              <caret line="44" column="24" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+            <state>
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/accounts/tests/test_views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="49" column="30" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mycalendar/tests/test_views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/account/logged_out.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/MonthlySumList.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/DailySumList.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/DailyInputList.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="455">
+              <caret line="48" selection-start-line="48" selection-end-line="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mycalendar/tests/test_models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1368">
+              <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mycalendar/tests/test_forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="32" lean-forward="true" selection-start-column="32" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mycalendar/tests/__init__.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -193,7 +279,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mycalendar/tests/.pytest_cache/v/cache/nodeids">
+        <entry file="file://$PROJECT_DIR$/accounts/tests/.pytest_cache/v/cache/nodeids">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -218,11 +304,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1656">
-              <caret line="92" column="26" selection-start-line="92" selection-start-column="26" selection-end-line="92" selection-end-column="26" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="383">
+              <caret line="82" column="64" selection-start-line="82" selection-start-column="50" selection-end-line="82" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -233,50 +316,44 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/mycalendar.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/newadd.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/newedit.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/Chart.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/multiAdd.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="954">
+            <state relative-caret-position="486">
               <caret line="53" column="23" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.github/CONTRIBUTING">
+        <entry file="file://$PROJECT_DIR$/templates/multiAdd - コピー.html">
           <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.github/ISSUE_TEMPLATE.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-            <state split_layout="SPLIT">
-              <first_editor />
-              <second_editor>
-                <markdownNavigatorState />
-              </second_editor>
-            </state>
-          </provider>
-          <provider editor-type-id="Gfm" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.github/PULL_REQUEST_TEMPLATE.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-            <state split_layout="SPLIT">
-              <first_editor />
-              <second_editor>
-                <markdownNavigatorState />
-              </second_editor>
-            </state>
-          </provider>
-          <provider editor-type-id="Gfm" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mysite/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="34" column="17" lean-forward="true" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+            <state relative-caret-position="244">
+              <caret line="236" column="49" lean-forward="true" selection-start-line="236" selection-start-column="49" selection-end-line="236" selection-end-column="49" />
               <folding>
                 <element signature="e#307#316#0" expanded="true" />
               </folding>
@@ -287,20 +364,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mysite/local_settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="323" column="11" lean-forward="true" selection-start-line="323" selection-start-column="11" selection-end-line="323" selection-end-column="11" />
+            <state relative-caret-position="648">
+              <caret line="318" column="46" selection-start-line="318" selection-start-column="46" selection-end-line="318" selection-end-column="46" />
               <folding>
                 <element signature="e#307#316#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/account/email/password_reset_key_message.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -322,8 +390,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mycalendar/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="76" selection-start-line="76" selection-end-line="76" />
+            <state relative-caret-position="324">
+              <caret line="51" column="21" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="21" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -373,6 +441,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mysite/wsgi.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/account/password_reset_done.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
@@ -394,7 +471,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/manage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="162">
+              <caret line="9" column="66" selection-start-line="9" selection-start-column="66" selection-end-line="9" selection-end-column="66" />
               <folding>
                 <element signature="e#22#31#0" expanded="true" />
               </folding>
@@ -410,8 +488,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mysite/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="33" column="29" lean-forward="true" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+            <state relative-caret-position="376">
+              <caret line="39" column="18" lean-forward="true" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
               <folding>
                 <element signature="e#630#662#0" expanded="true" />
               </folding>
@@ -450,7 +528,7 @@
               <ID>DjangoModelDependency</ID>
               <OriginalElement>#mysite</OriginalElement>
               <nodes>
-                <node x="66.02099331186514" y="602.1221203864255">accounts.models.CustomUser</node>
+                <node x="67.75" y="571.0">accounts.models.CustomUser</node>
                 <node x="382.75" y="132.0">mycalendar.models.MiddleItem</node>
                 <node x="437.5" y="289.0">mycalendar.models.Schedule</node>
                 <node x="48.75" y="182.0">django.contrib.auth.models.Permission</node>
@@ -505,10 +583,8 @@
                   <point x="-53.0" y="41.0" />
                 </edge>
               </edges>
-              <settings layout="Hierarchic Group" zoom="1.156733524355301" x="-163.4281644785732" y="187.4808025761704" />
-              <SelectedNodes>
-                <node>mycalendar.models.Schedule</node>
-              </SelectedNodes>
+              <settings layout="Hierarchic Group" zoom="1.156733524355301" x="51.48080257617039" y="187.4808025761704" />
+              <SelectedNodes />
               <Categories>
                 <Category>Fields</Category>
               </Categories>
@@ -534,6 +610,7 @@
       <find>idea</find>
       <find>Author</find>
       <find>datetime</find>
+      <find>debug</find>
     </findStrings>
     <replaceStrings>
       <replace>CustomUser</replace>
@@ -550,10 +627,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/bookmgr/views.py" />
-        <option value="$PROJECT_DIR$/bookmgr/templates/book_list.html" />
-        <option value="$PROJECT_DIR$/scraping/3-4/scrape_by_feedparser.py" />
-        <option value="$PROJECT_DIR$/scraping/README.txt" />
         <option value="$PROJECT_DIR$/accounts/models.py" />
         <option value="$PROJECT_DIR$/mysite/__init__.py" />
         <option value="$PROJECT_DIR$/accounts/admin.py" />
@@ -562,7 +635,6 @@
         <option value="$PROJECT_DIR$/mysite/wsgi.py" />
         <option value="$PROJECT_DIR$/templates/multiEdit.html" />
         <option value="$PROJECT_DIR$/templates/MonthlySumList.html" />
-        <option value="$PROJECT_DIR$/templates/DailyInputList.html" />
         <option value="$PROJECT_DIR$/templates/DailySumList.html" />
         <option value="$PROJECT_DIR$/mycalendar/admin.py" />
         <option value="$PROJECT_DIR$/templates/admin/base_site.html" />
@@ -574,7 +646,6 @@
         <option value="$PROJECT_DIR$/templates/account/password_reset_done.html" />
         <option value="$PROJECT_DIR$/templates/account/password_reset.html" />
         <option value="$PROJECT_DIR$/templates/account/password_change_done.html" />
-        <option value="$PROJECT_DIR$/mycalendar/views.py" />
         <option value="$PROJECT_DIR$/templates/account/email/password_reset_key_message.txt" />
         <option value="$PROJECT_DIR$/templates/account/email/password_reset_key_subject.txt" />
         <option value="$PROJECT_DIR$/templates/account/password_reset_from_key.html" />
@@ -593,13 +664,19 @@
         <option value="$PROJECT_DIR$/templates/account/login.html" />
         <option value="$PROJECT_DIR$/.ciercleci/config.yml" />
         <option value="$PROJECT_DIR$/mycalendar/tests/test.py" />
-        <option value="$PROJECT_DIR$/mycalendar/tests/test_forms.py" />
-        <option value="$PROJECT_DIR$/mycalendar/tests/test_models.py" />
         <option value="$PROJECT_DIR$/.circleci/config.yml" />
-        <option value="$PROJECT_DIR$/mycalendar/tests/test_views.py" />
         <option value="$PROJECT_DIR$/mycalendar/urls.py" />
-        <option value="$PROJECT_DIR$/mysite/urls.py" />
         <option value="$PROJECT_DIR$/mysite/local_settings.py" />
+        <option value="$PROJECT_DIR$/mycalendar/tests/test_models.py" />
+        <option value="$PROJECT_DIR$/accounts/tests/test_forms.py" />
+        <option value="$PROJECT_DIR$/accounts/tests/test_models.py" />
+        <option value="$PROJECT_DIR$/accounts/tests/test_views.py" />
+        <option value="$PROJECT_DIR$/mysite/urls.py" />
+        <option value="$PROJECT_DIR$/manage.py" />
+        <option value="$PROJECT_DIR$/templates/DailyInputList.html" />
+        <option value="$PROJECT_DIR$/mycalendar/views.py" />
+        <option value="$PROJECT_DIR$/mycalendar/tests/test_forms.py" />
+        <option value="$PROJECT_DIR$/mycalendar/tests/test_views.py" />
         <option value="$PROJECT_DIR$/mysite/settings.py" />
       </list>
     </option>
@@ -648,11 +725,6 @@
             <path>
               <item name="myapp2" type="b2602c69:ProjectViewProjectNode" />
               <item name="myapp2" type="462c0819:PsiDirectoryNode" />
-              <item name="accounts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myapp2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myapp2" type="462c0819:PsiDirectoryNode" />
               <item name="mycalendar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -688,7 +760,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="TF_FMT" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../akiyoko-sample" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -699,15 +771,16 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\toru-ishikawa\PycharmProjects\myapp2\templates\account" />
+      <recent name="C:\Users\toru-ishikawa\PycharmProjects\myapp2\mycalendar\tests" />
+      <recent name="C:\Users\toru-ishikawa\PycharmProjects\myapp2\accounts" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\toru-ishikawa\PycharmProjects\myapp2" />
       <recent name="C:\Users\toru-ishikawa\PycharmProjects\myapp2\mycalendar\tests" />
       <recent name="C:\Vagrant\share\mysite\bookmgr\templates" />
       <recent name="C:\Vagrant\share\mysite" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\toru-ishikawa\PycharmProjects\myapp2\templates\account" />
-      <recent name="C:\Users\toru-ishikawa\PycharmProjects\myapp2\mycalendar\tests" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -722,7 +795,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Django server.main">
+  <component name="RunManager" selected="Django tests.Test: mycalendar.tests.test_models">
     <configuration name="Django test" type="DjangoTestsConfigurationType">
       <module name="mysite" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -738,7 +811,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="" />
+      <option name="TARGET" value="accounts.tests" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
@@ -765,26 +838,6 @@
       <option name="OPTIONS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Test: mycalendar.tests.test_models.ScheduleModelTest.test_Schedule_value_date" type="DjangoTestsConfigurationType" temporary="true">
-      <module name="mysite" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="mycalendar.tests.test_models.ScheduleModelTest.test_Schedule_value_date" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="Test: mycalendar.tests.test_views" type="DjangoTestsConfigurationType" temporary="true">
       <module name="mysite" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -805,7 +858,7 @@
       <option name="OPTIONS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Test: mycalendar.tests.test_views.mycalendarViewTests" type="DjangoTestsConfigurationType" temporary="true">
+    <configuration name="Test: mycalendar.tests.test_views.ScheduleTest" type="DjangoTestsConfigurationType" temporary="true">
       <module name="mysite" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -818,14 +871,14 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="mycalendar.tests.test_views.mycalendarViewTests" />
+      <option name="TARGET" value="mycalendar.tests.test_views.ScheduleTest" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Test: mycalendar.tests.test_views.mycalendarViewTests.test_view_uses_correct_template" type="DjangoTestsConfigurationType" temporary="true">
+    <configuration name="Test: mycalendar.tests.test_views.ScheduleTest.test_get_navlink" type="DjangoTestsConfigurationType" temporary="true">
       <module name="mysite" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -838,7 +891,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="mycalendar.tests.test_views.mycalendarViewTests.test_view_uses_correct_template" />
+      <option name="TARGET" value="mycalendar.tests.test_views.ScheduleTest.test_get_navlink" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: mycalendar.tests.test_views.ScheduleTest.test_get_schedule" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="mysite" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="mycalendar.tests.test_views.ScheduleTest.test_get_schedule" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
@@ -893,7 +966,7 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="ユニットテスト in myapp2" type="tests" factoryName="ユニットテスト" nameIsGenerated="true">
+    <configuration name="ユニットテスト in tests" type="tests" factoryName="ユニットテスト" nameIsGenerated="true">
       <module name="mysite" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -909,11 +982,11 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_pattern" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/accounts/tests&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest in myapp2" type="tests" factoryName="py.test" nameIsGenerated="true" show_console_on_std_err="true" show_console_on_std_out="true">
+    <configuration name="pytest in tests" type="tests" factoryName="py.test" nameIsGenerated="true" show_console_on_std_err="true" show_console_on_std_out="true">
       <module name="mysite" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -929,7 +1002,7 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/accounts/tests&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
@@ -937,21 +1010,21 @@
       <item itemvalue="Django server.admin" />
       <item itemvalue="Django server.main" />
       <item itemvalue="Django tests.Django test" />
-      <item itemvalue="Python テスト.ユニットテスト in myapp2" />
-      <item itemvalue="Python テスト.pytest in myapp2" />
-      <item itemvalue="Django tests.Test: mycalendar.tests.test_models.ScheduleModelTest.test_Schedule_value_date" />
+      <item itemvalue="Django tests.Test: mycalendar.tests.test_views.ScheduleTest" />
+      <item itemvalue="Django tests.Test: mycalendar.tests.test_views.ScheduleTest.test_get_navlink" />
+      <item itemvalue="Python テスト.ユニットテスト in tests" />
+      <item itemvalue="Python テスト.pytest in tests" />
       <item itemvalue="Django tests.Test: mycalendar.tests.test_models" />
+      <item itemvalue="Django tests.Test: mycalendar.tests.test_views.ScheduleTest.test_get_schedule" />
       <item itemvalue="Django tests.Test: mycalendar.tests.test_views" />
-      <item itemvalue="Django tests.Test: mycalendar.tests.test_views.mycalendarViewTests" />
-      <item itemvalue="Django tests.Test: mycalendar.tests.test_views.mycalendarViewTests.test_view_uses_correct_template" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Django tests.Test: mycalendar.tests.test_views.mycalendarViewTests.test_view_uses_correct_template" />
-        <item itemvalue="Django tests.Test: mycalendar.tests.test_views.mycalendarViewTests" />
-        <item itemvalue="Django tests.Test: mycalendar.tests.test_views" />
         <item itemvalue="Django tests.Test: mycalendar.tests.test_models" />
-        <item itemvalue="Django tests.Test: mycalendar.tests.test_models.ScheduleModelTest.test_Schedule_value_date" />
+        <item itemvalue="Django tests.Test: mycalendar.tests.test_views" />
+        <item itemvalue="Django tests.Test: mycalendar.tests.test_views.ScheduleTest.test_get_schedule" />
+        <item itemvalue="Django tests.Test: mycalendar.tests.test_views.ScheduleTest.test_get_navlink" />
+        <item itemvalue="Django tests.Test: mycalendar.tests.test_views.ScheduleTest" />
       </list>
     </recent_temporary>
   </component>
@@ -967,7 +1040,7 @@
       <updated>1531884922525</updated>
       <workItem from="1544085397787" duration="3860000" />
       <workItem from="1545376424274" duration="46071000" />
-      <workItem from="1545894907500" duration="23377000" />
+      <workItem from="1545894907500" duration="46591000" />
     </task>
     <task id="LOCAL-00001" summary="2018/11/09 modify&#10;base.html,readme.md">
       <created>1541759750794</created>
@@ -1270,43 +1343,57 @@
       <option name="project" value="LOCAL" />
       <updated>1545972803885</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="2018/12/26 test_models.py add">
+      <created>1545974319923</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1545974319923</updated>
+    </task>
+    <task id="LOCAL-00045" summary="2018/12/26 test_models.py add">
+      <created>1545975003846</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1545975003846</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Test__mycalendar_tests_test_views_mycalendarViewTests_test_view_uses_correct_template - 2018.12.28 at 10h 46m 48s.xml">
-      <configuration name="Test: mycalendar.tests.test_views.mycalendarViewTests.test_view_uses_correct_template" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__mycalendar_tests_test_views_ScheduleTest_test_get_navlink - 2018.12.29 at 03h 50m 33s.xml">
+      <configuration name="Test: mycalendar.tests.test_views.ScheduleTest.test_get_navlink" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__mycalendar_tests_test_views_mycalendarViewTests_test_view_uses_correct_template - 2018.12.28 at 10h 47m 28s.xml">
-      <configuration name="Test: mycalendar.tests.test_views.mycalendarViewTests.test_view_uses_correct_template" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__mycalendar_tests_test_views_ScheduleTest_test_get_navlink - 2018.12.29 at 03h 51m 22s.xml">
+      <configuration name="Test: mycalendar.tests.test_views.ScheduleTest.test_get_navlink" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__mycalendar_tests_test_views_mycalendarViewTests_test_view_uses_correct_template - 2018.12.28 at 10h 47m 52s.xml">
-      <configuration name="Test: mycalendar.tests.test_views.mycalendarViewTests.test_view_uses_correct_template" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__mycalendar_tests_test_views_ScheduleTest_test_get_navlink - 2018.12.29 at 03h 51m 44s.xml">
+      <configuration name="Test: mycalendar.tests.test_views.ScheduleTest.test_get_navlink" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__mycalendar_tests_test_views_mycalendarViewTests_test_view_uses_correct_template - 2018.12.28 at 10h 51m 31s.xml">
-      <configuration name="Test: mycalendar.tests.test_views.mycalendarViewTests.test_view_uses_correct_template" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__mycalendar_tests_test_views_ScheduleTest_test_get_navlink - 2018.12.29 at 03h 51m 58s.xml">
+      <configuration name="Test: mycalendar.tests.test_views.ScheduleTest.test_get_navlink" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__mycalendar_tests_test_views_mycalendarViewTests_test_view_uses_correct_template - 2018.12.28 at 10h 52m 02s.xml">
-      <configuration name="Test: mycalendar.tests.test_views.mycalendarViewTests.test_view_uses_correct_template" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__mycalendar_tests_test_views_ScheduleTest_test_get_schedule - 2018.12.29 at 03h 55m 20s.xml">
+      <configuration name="Test: mycalendar.tests.test_views.ScheduleTest.test_get_schedule" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__mycalendar_tests_test_views_mycalendarViewTests_test_view_uses_correct_template - 2018.12.28 at 10h 52m 30s.xml">
-      <configuration name="Test: mycalendar.tests.test_views.mycalendarViewTests.test_view_uses_correct_template" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__mycalendar_tests_test_views_ScheduleTest_test_get_schedule - 2018.12.29 at 03h 56m 31s.xml">
+      <configuration name="Test: mycalendar.tests.test_views.ScheduleTest.test_get_schedule" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__mycalendar_tests_test_views_mycalendarViewTests_test_view_uses_correct_template - 2018.12.28 at 10h 53m 24s.xml">
-      <configuration name="Test: mycalendar.tests.test_views.mycalendarViewTests.test_view_uses_correct_template" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__mycalendar_tests_test_views_ScheduleTest_test_get_schedule - 2018.12.29 at 03h 57m 02s.xml">
+      <configuration name="Test: mycalendar.tests.test_views.ScheduleTest.test_get_schedule" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__mycalendar_tests_test_views_mycalendarViewTests_test_view_uses_correct_template - 2018.12.28 at 10h 54m 03s.xml">
-      <configuration name="Test: mycalendar.tests.test_views.mycalendarViewTests.test_view_uses_correct_template" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__mycalendar_tests_test_views - 2018.12.29 at 03h 59m 05s.xml">
+      <configuration name="Test: mycalendar.tests.test_views" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__mycalendar_tests_test_views_mycalendarViewTests_test_view_uses_correct_template - 2018.12.28 at 11h 38m 32s.xml">
-      <configuration name="Test: mycalendar.tests.test_views.mycalendarViewTests.test_view_uses_correct_template" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__mycalendar_tests_test_views - 2018.12.29 at 03h 59m 57s.xml">
+      <configuration name="Test: mycalendar.tests.test_views" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__mycalendar_tests_test_views_mycalendarViewTests_test_view_uses_correct_template - 2018.12.28 at 12h 02m 22s.xml">
-      <configuration name="Test: mycalendar.tests.test_views.mycalendarViewTests.test_view_uses_correct_template" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__mycalendar_tests_test_models - 2018.12.29 at 04h 00m 11s.xml">
+      <configuration name="Test: mycalendar.tests.test_models" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73308000" />
+    <option name="totallyTimeSpent" value="96522000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1318,32 +1405,33 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1010" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20048702" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13194445" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="SQL Generator" sideWeight="0.49946582" weight="0.32901832" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49893162" weight="0.29621124" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39954075" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49893162" visible="true" weight="0.29557714" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.399137" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3295063" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49786323" weight="0.30769232" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49786323" weight="0.28910464" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50106835" side_tool="true" weight="0.2966559" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.49756494" visible="true" weight="0.37887487" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49756494" weight="0.37864077" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.4991883" weight="0.32901832" />
       <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" />
-      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" weight="0.3295063" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
-      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.32954547" />
+      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.32905984" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="GfmBrowser" order="3" weight="0.32959402" />
-      <window_info anchor="right" id="Database" order="4" weight="0.32905984" />
+      <window_info anchor="right" id="Database" order="4" weight="0.32873377" />
       <window_info anchor="right" id="SciView" order="5" />
     </layout>
   </component>
@@ -1413,146 +1501,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="2018/12/26 test_models.py add" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.github/PULL_REQUEST_TEMPLATE.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor>
-            <markdownNavigatorState />
-          </second_editor>
-        </state>
-      </provider>
-      <provider editor-type-id="Gfm" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/account/email/password_reset_key_message.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/account/email/password_reset_key_subject.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/account/password_reset.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/account/password_reset_from_key.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="59" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/account/password_reset_from_key_done.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/account/password_change.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="954">
-          <caret line="53" column="25" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runtime.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" selection-start-column="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/admin/img/LICENSE">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/admin/img/inline-delete.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/admin/img/icon-unknown.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1944">
-          <caret line="108" column="12" selection-start-line="108" selection-start-column="12" selection-end-line="108" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/admin/img/icon-unknown-alt.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/admin/img/icon-viewlink.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#22#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/admin/img/icon-yes.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="180">
-            <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-          </first_editor>
-          <second_editor>
-            <markdownNavigatorState />
-          </second_editor>
-        </state>
-      </provider>
-      <provider editor-type-id="Gfm" />
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Continuum/Anaconda3/Lib/site-packages/django/conf/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" selection-start-line="14" selection-end-line="14" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mycalendar/tests/.pytest_cache/v/cache/nodeids">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/account/email_confirm.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1638,13 +1586,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mycalendar/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="58" column="39" selection-start-line="58" selection-start-column="39" selection-end-line="58" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="uml://DjangoModelDependency/#mysite">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
           <ID>DjangoModelDependency</ID>
           <OriginalElement>#mysite</OriginalElement>
           <nodes>
-            <node x="66.02099331186514" y="602.1221203864255">accounts.models.CustomUser</node>
+            <node x="67.75" y="571.0">accounts.models.CustomUser</node>
             <node x="382.75" y="132.0">mycalendar.models.MiddleItem</node>
             <node x="437.5" y="289.0">mycalendar.models.Schedule</node>
             <node x="48.75" y="182.0">django.contrib.auth.models.Permission</node>
@@ -1699,10 +1676,8 @@
               <point x="-53.0" y="41.0" />
             </edge>
           </edges>
-          <settings layout="Hierarchic Group" zoom="1.156733524355301" x="-163.4281644785732" y="187.4808025761704" />
-          <SelectedNodes>
-            <node>mycalendar.models.Schedule</node>
-          </SelectedNodes>
+          <settings layout="Hierarchic Group" zoom="1.156733524355301" x="51.48080257617039" y="187.4808025761704" />
+          <SelectedNodes />
           <Categories>
             <Category>Fields</Category>
           </Categories>
@@ -1712,9 +1687,26 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a2857ab4-668e-4a22-89b7-84346085fc95/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/accounts/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
+        <state relative-caret-position="215">
           <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
           <folding>
             <element signature="e#0#68#0" expanded="true" />
@@ -1722,50 +1714,199 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mycalendar/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/tests.py">
+    <entry file="file://$PROJECT_DIR$/mycalendar/tests/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-107">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/apps.py">
+    <entry file="file://$PROJECT_DIR$/accounts/tests/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/mycalendar/tests/test_models.py">
+    <entry file="file://$PROJECT_DIR$/accounts/tests/test_forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-612">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        <state relative-caret-position="108">
+          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="48" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/tests/test_models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/tests/test_views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="49" column="30" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/local_settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="318" column="46" selection-start-line="318" selection-start-column="46" selection-end-line="318" selection-end-column="46" />
+          <folding>
+            <element signature="e#307#316#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="39" column="18" lean-forward="true" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+          <folding>
+            <element signature="e#630#662#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="66" selection-start-line="9" selection-start-column="66" selection-end-line="9" selection-end-column="66" />
+          <folding>
+            <element signature="e#22#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mycalendar/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="51" column="21" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="82" column="64" selection-start-line="82" selection-start-column="50" selection-end-line="82" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/account/logged_out.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/multiAdd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="53" column="23" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/multiAdd - コピー.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/multiEdit.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/mycalendar.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.github/CONTRIBUTING">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/newadd.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.github/ISSUE_TEMPLATE.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+      <provider editor-type-id="Gfm" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/newedit.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.github/PULL_REQUEST_TEMPLATE.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+      <provider editor-type-id="Gfm" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Chart.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/MonthlySumList.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/account/email/password_reset_key_message.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/DailySumList.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="180">
+            <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+      <provider editor-type-id="Gfm" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/DailyInputList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mycalendar/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="302" selection-start-line="302" selection-end-line="302" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mycalendar/tests/test_views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="44" column="24" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+        <state relative-caret-position="36">
+          <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mycalendar/tests/test_models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1368">
+          <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
@@ -1774,58 +1915,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mycalendar/tests/test_forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mycalendar/tests/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mycalendar/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="58" column="39" selection-start-line="58" selection-start-column="39" selection-end-line="58" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mycalendar/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="33" column="29" lean-forward="true" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
-          <folding>
-            <element signature="e#630#662#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/local_settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="323" column="11" lean-forward="true" selection-start-line="323" selection-start-column="11" selection-end-line="323" selection-end-column="11" />
-          <folding>
-            <element signature="e#307#316#0" expanded="true" />
-          </folding>
+        <state>
+          <caret column="32" lean-forward="true" selection-start-column="32" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mysite/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="34" column="17" lean-forward="true" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+        <state relative-caret-position="244">
+          <caret line="236" column="49" lean-forward="true" selection-start-line="236" selection-start-column="49" selection-end-line="236" selection-end-column="49" />
           <folding>
             <element signature="e#307#316#0" expanded="true" />
           </folding>

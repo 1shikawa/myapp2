@@ -300,7 +300,6 @@ class DailyInputList(generic.ListView):
     model = Schedule
     context_object_name = 'DailyInputList'
     template_name = 'DailyInputList.html'
-    paginate_by = 5
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

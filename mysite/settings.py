@@ -28,7 +28,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'cc^9(lfy_tntc6i2-y#!ff%6vkbao*c8w(3%(dmsnyjs3=v!n3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -55,7 +55,6 @@ INSTALLED_APPS = [
     # 'accounts', # 追記箇所
     'gunicorn',  # 追記箇所
     'mycalendar',  # 追記箇所
-
 ]
 
 MIDDLEWARE = [
@@ -65,7 +64,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware'
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -93,29 +92,6 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 ############
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-
-# DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#        'NAME': 'mysite',
-#        'USER':'mysiteuser',
-#        'PASSWORD':'p@ssword',
-#        'HOST':'localhost',
-#        'PORT':'',
-#    }
-# }
-
-# DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.mysql',
-#        'NAME': 'start_aws_dbname', # DB名
-#        'USER':'start_aws_dbuser', # マスタユーザ名
-#        'PASSWORD':'start_aws_dbuser',# マスタパスワード
-#        'HOST':'start-aws-db-instance.cxdwl4rogkfy.us-east-2.rds.amazonaws.com',# エンドポイント
-#        'PORT':'3306',
-#    }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -207,54 +183,8 @@ LOGOUT_REDIRECT_URL = '/'  # 追記箇所
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
-
 ###########
 # Logging 本番用 #
-###########
-
-# LOGGING = {
-#     # バージョンは「1」固定
-#     'version': 1,
-#     # 既存のログ設定を無効化しない
-#     'disable_existing_loggers': False,
-#     # ログフォーマット
-#     'formatters': {
-#         # 本番用
-#         'production': {
-#             'format': '%(asctime)s [%(levelname)s] %(process)d %(thread)d '
-#                       '%(pathname)s:%(lineno)d %(message)s'
-#         },
-#     },
-#     # ハンドラ
-#     'handlers': {
-#         # ファイル出力用ハンドラ
-#         'file': {
-#             'level': 'INFO',
-#             'class': 'logging.FileHandler',
-#             'filename': '/var/log/{}/app.log'.format('mycalendar'),
-#             'formatter': 'production',
-#         },
-#     },
-#     # ロガー
-#     'loggers': {
-#         # 自作アプリケーション全般のログを拾うロガー
-#         '': {
-#             'handlers': ['file'],
-#             'level': 'INFO',
-#             'propagate': False,
-#         },
-#         # Django本体が出すログ全般を拾うロガー
-#         'django': {
-#             'handlers': ['file'],
-#             'level': 'INFO',
-#             'propagate': False,
-#         },
-#     },
-# }
-
-
-###########
-# Logging 開発用 #
 ###########
 
 LOGGING = {
@@ -264,41 +194,36 @@ LOGGING = {
     'disable_existing_loggers': False,
     # ログフォーマット
     'formatters': {
-        # 開発用
-        'develop': {
-            'format': '%(asctime)s [%(levelname)s] %(pathname)s:%(lineno)d '
-                      '%(message)s'
+        # 本番用
+        'production': {
+            'format': '%(asctime)s [%(levelname)s] %(process)d %(thread)d '
+                      '%(pathname)s:%(lineno)d %(message)s'
         },
     },
     # ハンドラ
     'handlers': {
-        # コンソール出力用ハンドラ
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-            'formatter': 'develop',
+        # ファイル出力用ハンドラ
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': '/var/log/{}/app.log'.format(BASE_DIR),
+            'formatter': 'production',
         },
     },
     # ロガー
     'loggers': {
         # 自作アプリケーション全般のログを拾うロガー
         '': {
-            'handlers': ['console'],
-            'level': 'DEBUG',
+            'handlers': ['file'],
+            'level': 'INFO',
             'propagate': False,
         },
         # Django本体が出すログ全般を拾うロガー
         'django': {
-            'handlers': ['console'],
+            'handlers': ['file'],
             'level': 'INFO',
             'propagate': False,
         },
-        # 発行されるSQL文を出力するための設定
-        # 'django.db.backends': {
-        #     'handlers': ['console'],
-        #     'level': 'DEBUG',
-        #     'propagate': False,
-        # },
     },
 }
 
@@ -312,6 +237,12 @@ DEFAULT_FROM_EMAIL = SERVER_EMAIL = 'notify@ishi-work.ml'
 SENDGRID_API_KEY = os.environ['SENDGRID_API_KEY']
 SENDGRID_SANDBOX_MODE_IN_DEBUG = False
 
+###########
+# Test setting #
+###########
+TEST_RUNNER = 'xmlrunner.extra.djangotestrunner.XMLTestRunner'
+TEST_OUTPUT_VERBOSE = 2
+TEST_OUTPUT_DIR = 'test-results'
 
 # herokuデプロイ用
 django_heroku.settings(locals())
