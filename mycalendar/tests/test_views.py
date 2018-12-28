@@ -5,24 +5,23 @@ from accounts.models import CustomUser
 # @python_2_unicode_compatible
 class mycalendarViewTests(TestCase):
     @classmethod
-    def schedule(self):
-        """
-        登録データはなし
-        """
-        sh = Schedule.objects.all().count()
-        self.assertEqual(sh,200)
-
-    def setUp(self):
+    def setUp(cls):
         """
         テスト実行前の処理
         ログイン可能なユーザを1名追加
         """
         CustomUser.objects.create_user(email='ishitest@test.com',
                                      password='test1234')
+    def test_schedule(self):
+        """
+        schedule登録データはなし
+        """
+        schedule_data = Schedule.objects.all().count()
+        self.assertEqual(schedule_data, 0)
 
     def test_index(self):
         """
-        indexの画面へアクセスできるかどうかをテストする
+        indexの画面へアクセスできるかどうか
         この画面はログインしているユーザでないとアクセス不可
         """
         client = self.client
@@ -39,21 +38,20 @@ class mycalendarViewTests(TestCase):
         # ステータスコード：301が返却されリダイレクトされる
         self.assertEqual(response.status_code, 301)
 
-#
-# from django.test import TestCase
-#
-# # Create your tests here.
-#
-#
-# from catalog.models import Author
-# from django.urls import reverse
-#
-#
+    def test_view_uses_correct_template(self):
+        client = self.client
+        resp = self.client.get('/')
+        self.assertEqual(resp.status_code, 301)
+        resp = client.get('/accounts/login/')
+        self.assertEqual(resp.status_code, 200)
+        client.login(email='ishitest@test.com', password='test1234')
+
+
 # class AuthorListViewTest(TestCase):
 #
 #     @classmethod
 #     def setUpTestData(cls):
-#         # Create authors for pagination tests
+#         Create authors for pagination tests
 #         number_of_authors = 13
 #         for author_num in range(number_of_authors):
 #             # Author.objects.create(first_name='Christian %s' % author_num, last_name = 'Surname %s' % author_num,)
@@ -87,7 +85,7 @@ class mycalendarViewTests(TestCase):
 #         self.assertTrue('is_paginated' in resp.context)
 #         self.assertTrue(resp.context['is_paginated'] == True)
 #         self.assertTrue(len(resp.context['author_list']) == 3)
-#
+
 #
 # import datetime
 # from django.utils import timezone
