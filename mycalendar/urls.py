@@ -1,6 +1,6 @@
-from django.urls import path,include
+from django.urls import path, include
 from . import views
-from django.contrib.auth import views as auth_views #ログアウトに必要
+from django.contrib.auth import views as auth_views  # ログアウトに必要
 
 app_name = 'mycalendar'
 
@@ -40,7 +40,7 @@ urlpatterns = [
     # ),
     path(
         'month_with_schedule/NewMultiEdit/<int:year>/<int:month>/<int:day>',
-        views.NewMultiEdit.as_view(), name = 'NewMultiEdit'
+        views.NewMultiEdit.as_view(), name='NewMultiEdit'
     ),
     # 入力一覧
     path(
@@ -72,5 +72,3 @@ urlpatterns = [
         'mycalendar/<int:year>/<int:month>/<int:day>/', views.MyCalendar.as_view(), name='mycalendar'
     ),
 ]
-
-
