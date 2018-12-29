@@ -2,9 +2,6 @@
 import logging
 import csv
 import datetime
-from django.contrib.auth.views import (
-    LoginView, LogoutView, PasswordChangeView, PasswordChangeDoneView
-)
 from datetime import timedelta
 from django.utils.decorators import method_decorator  # @method_decoratorに使用
 from django.contrib.auth.decorators import login_required  # @method_decoratorに使用
@@ -14,7 +11,7 @@ from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.views import generic
 from mycalendar.models import Schedule, LargeItem
-from .forms import BS4ScheduleForm, BS4ScheduleNewFormSet, BS4ScheduleEditFormSet, MyPasswordChangeForm
+from .forms import BS4ScheduleForm, BS4ScheduleNewFormSet, BS4ScheduleEditFormSet
 from .basecalendar import (
     MonthCalendarMixin, MonthWithScheduleMixin
 )
@@ -39,7 +36,7 @@ logger = logging.getLogger(__name__)
 #     """パスワード変更後ビュー"""
 #     template_name = 'account/password_change_done.html'
 
-#クラスベースビューの場合のデコレータ
+# クラスベースビューの場合のデコレータ
 @method_decorator(login_required, name='dispatch')
 class MonthWithScheduleCalendar(MonthWithScheduleMixin, generic.TemplateView):
     """スケジュール付きの月間カレンダーを表示するビュー"""
@@ -178,7 +175,8 @@ class NewMultiEdit(MonthCalendarMixin, generic.FormView):
         if month and year and day:
             date = str(year) + '-' + str(month) + '-' + str(day)
         return BS4ScheduleEditFormSet(self.request.POST or None,
-                                      queryset=Schedule.objects.filter(date=date, register=str(self.request.user).split('@')[0]))
+                                      queryset=Schedule.objects.filter(date=date,
+                                                                       register=str(self.request.user).split('@')[0]))
 
         # def form_valid(self, form):
         #     month = self.kwargs.get('month')
@@ -438,6 +436,7 @@ class Chart(generic.ListView):
         context['register'] = sorted_grouped_df['register'].drop_duplicates().reset_index()
         return context
 
+
 # 関数ベースビューの場合のデコレータ
 @login_required
 def SumExport(request):
@@ -446,7 +445,7 @@ def SumExport(request):
     response['Content-Disposition'] = 'attachment; filename="SumExport.csv"'  # ファイルダウンロードを強制
     # HttpResponseオブジェクトはファイルっぽいオブジェクトなので、csv.writerにそのまま渡せます。
     writer = csv.writer(response)
-    writer.writerow(['id','大項目','中項目','工数', '登録者'])
+    writer.writerow(['id', '大項目', '中項目', '工数', '登録者'])
     for s in Schedule.objects.all():
         writer.writerow([s.pk, s.LargeItem, s.MiddleItem, s.kosu, s.register])
     return response
