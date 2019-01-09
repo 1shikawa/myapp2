@@ -5,7 +5,7 @@
 AWS環境：https://ishi-work.ml
 
 # ユースケース
-![1](https://user-images.githubusercontent.com/40058717/50438618-13665880-0932-11e9-8d35-3e118cdfbde0.png)
+![3](https://user-images.githubusercontent.com/40058717/50887026-657ca300-1435-11e9-89fb-a23e1d3b7ae2.png)
 
 
 # 開発環境
