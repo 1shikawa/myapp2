@@ -20,7 +20,7 @@ IDE：Pycharm 2018.2.2(Community Edition),AWS Cloud9\
 その他：VirtualBox,Vagrant,Docker
 
 # 開発運用環境
-![1](https://user-images.githubusercontent.com/40058717/48880920-ebc53180-ee55-11e8-9b6d-552bc315a7a0.png)
+![1](https://user-images.githubusercontent.com/40058717/50886367-96f46f00-1433-11e9-829a-c78533789a6c.png)
 
 # 調査検証中
 ![22](https://user-images.githubusercontent.com/40058717/49131104-2e857e80-f31a-11e8-8d1a-a14eb798db66.png)
