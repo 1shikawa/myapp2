@@ -4,329 +4,187 @@
 </head>
 
 {% block extracss %}
-.container {
-width: 80%;
-margin: 15px auto;
-}
+    .container {
+    width: 80%;
+    margin: 15px auto;
+    }
 {% endblock %}
 
 <body>
 {% block contents %}
-<div class="table-sm">
-    <table class="table table-bordered table-hover">
-        <thead>
-        <tr class="table-secondary">
+    <div class="table-sm">
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr class="table-secondary">
 
-            <th>大項目</th>
-            <th>工数</th>
-            <th>登録者</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for index, row in df.iterrows %}
-        <tr>
-
-            <td>{{ row.LargeItemLabel }}</td>
-            <td>{{ row.kosu }} </td>
-            <td>{{ row.register }}</td>
-        </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-</div>
-
-
-<div class="container-fluid">
-    <h2>PieChart(工事中)</h2>
-    <div class="row">
-        <div class="col-md-6">
-            <div>
-                <canvas id="PieChart1"></canvas>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div>
-                <canvas id="PieChart2"></canvas>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div>
-                <canvas id="PieChart3"></canvas>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div>
-                <canvas id="PieChart4"></canvas>
-            </div>
-        </div>
+                <th>大項目</th>
+                <th>工数</th>
+                <th>登録者</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for index, row in df.iterrows %}
+                <tr>
+                    <td>{{ row.LargeItemLabel }}</td>
+                    <td>{{ row.kosu }} </td>
+                    <td>{{ row.register }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
     </div>
-    <br>
-    <h2>BarGraph(工事中)
+
+
+    <div class="container-fluid">
+        <h2>PieChart(工事中)</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div>
+                    <canvas id="PieChart1"></canvas>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <canvas id="PieChart2"></canvas>
+                </div>
+            </div>
+        </div>
+        <br>
+        <h2>BarGraph(工事中)</h2>
         <div class="col-md-8">
             <div>
                 <canvas id="BarGraph"></canvas>
             </div>
         </div>
-</div>
+    </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
-<script>
-{% block extrajs %}
-var ctx = document.getElementById("PieChart1").getContext('2d');
-var myChart = new Chart(ctx, {
-  type: 'pie',
-  data: {
-    labels: [{% for index, row in df.iterrows %}
-          {% if row.register == 'admin' %}
-            '{{ row.LargeItemLabel }}',
-            {% endif %}
-         {% endfor %}],
-    datasets: [{
-      backgroundColor: [
-        "#2ecc71",
-        "#3498db",
-        "#95a5a6",
-        "#9b59b6",
-        "#f1c40f",
-        "#e74c3c",
-        "#34495e"
-      ],
-      data: [{% for index, row in df.iterrows %}
-          {% if row.register == 'admin' %}
-            {{ row.kosu }},
-            {% endif %}
-         {% endfor %}],
-    }]
-  },
-  options: {
-        title: {
-            display: true,
-            position: 'bottom',
-            fontSize:15,
-            text: 'admin'
-        }
-    }
-});
-
-var ctx = document.getElementById("PieChart2").getContext('2d');
-var myChart = new Chart(ctx, {
-  type: 'pie',
-  data: {
-    labels: [{% for index, row in df.iterrows %}
-          {% if row.register == 'ishikawa' %}
-            '{{ row.LargeItemLabel }}',
-            {% endif %}
-         {% endfor %}],
-    datasets: [{
-      backgroundColor: [
-        "#2ecc71",
-        "#3498db",
-        "#95a5a6",
-        "#9b59b6",
-        "#f1c40f",
-        "#e74c3c",
-        "#34495e"
-      ],
-      data: [{% for index, row in df.iterrows %}
-          {% if row.register == 'ishikawa' %}
-            {{ row.kosu }},
-            {% endif %}
-         {% endfor %}],
-    }]
-  },
-  options: {
-        title: {
-            display: true,
-            position: 'bottom',
-            fontSize:15,
-            text: 'ishikawa'
-        }
-    }
-});
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+    <script>
+        {% block extrajs %}
+            var ctx = document.getElementById("PieChart1").getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: [{% for index, row in df.iterrows %}
+                            '{{ row.LargeItemLabel }}',
+                    {% endfor %}],
+                    datasets: [{
+                        backgroundColor: [
+                            "#2ecc71",
+                            "#3498db",
+                            "#95a5a6",
+                            "#9b59b6",
+                            "#f1c40f",
+                            "#e74c3c",
+                            "#34495e"
+                        ],
+                        data: [{% for index, row in df.iterrows %}
+                                {{ row.kosu }},
+                                 {% endfor %}],
+                    }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        position: 'bottom',
+                        fontSize: 15,
+                        text: 'register'
+                    }
+                }
+            });
 
 
-var ctx = document.getElementById("PieChart3").getContext('2d');
-var myChart = new Chart(ctx, {
-  type: 'pie',
-  data: {
-    labels: [{% for index, row in df.iterrows %}
-          {% if row.register == 'fujikawa' %}
-            '{{ row.LargeItemLabel }}',
-            {% endif %}
-         {% endfor %}],
-    datasets: [{
-      backgroundColor: [
-        "#2ecc71",
-        "#3498db",
-        "#95a5a6",
-        "#9b59b6",
-        "#f1c40f",
-        "#e74c3c",
-        "#34495e"
-      ],
-      data: [{% for index, row in df.iterrows %}
-          {% if row.register == 'fujikawa' %}
-            {{ row.kosu }},
-            {% endif %}
-         {% endfor %}],
-    }]
-  },
-  options: {
-        title: {
-            display: true,
-            position: 'bottom',
-            fontSize:15,
-            text: 'fujikawa'
-        }
-    }
-});
+            var ctx = document.getElementById("PieChart2").getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ["test1", "test2", "test3", "test4", "test5", "test6", "test7"],
+                    datasets: [{
+                        backgroundColor: [
+                            "#2ecc71",
+                            "#3498db",
+                            "#95a5a6",
+                            "#9b59b6",
+                            "#f1c40f",
+                            "#e74c3c",
+                            "#34495e"
+                        ],
+                        data: [12, 19, 3, 17, 28, 24, 7]
+                    }]
+                }
+            });
 
 
-var ctx = document.getElementById("PieChart4").getContext('2d');
-var myChart = new Chart(ctx, {
-  type: 'pie',
-  data: {
-    labels: ["test1", "test2", "test3", "test4", "test5", "test6", "test7"],
-    datasets: [{
-      backgroundColor: [
-        "#2ecc71",
-        "#3498db",
-        "#95a5a6",
-        "#9b59b6",
-        "#f1c40f",
-        "#e74c3c",
-        "#34495e"
-      ],
-      data: [12, 19, 3, 17, 28, 24, 7]
-    }]
-  }
-});
+            var ctx = document.getElementById("BarGraph").getContext('2d');
+            var original = Chart.defaults.global.legend.onClick;
+            Chart.defaults.global.legend.onClick = function (e, legendItem) {
+                update_caption(legendItem);
+                original.call(this, e, legendItem);
+            };
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: [{% for index, row in register.iterrows %}
+                        '{{ row.register }}',
+                    {% endfor %}                    ],
 
-
-var ctx = document.getElementById("BarGraph").getContext('2d');
-var original = Chart.defaults.global.legend.onClick;
-Chart.defaults.global.legend.onClick = function(e, legendItem) {
-update_caption(legendItem);
-original.call(this, e, legendItem);
-};
-var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: [{% for index, row in register.iterrows %}
-            '{{ row.register }}',
-            {% endfor %}                    ],
-
-        datasets: [{
-            label: 'test1',
-            backgroundColor: "rgba(91,155,213,1)",
-            data: [{% for index, row in df.iterrows %}
-                {% if row.LargeItem == 1%}
-                '{{ row.kosu }}',
-                {% endif %}
-                {% endfor %}        ],
-        },
-        {
-            label: 'test2',
-            backgroundColor: "rgba(237,125,49,1)",
-            data: [{% for index, row in df.iterrows %}
-                {% if row.LargeItem == 2%}
-                '{{ row.kosu }}',
-                {% endif %}
-                {% endfor %}        ],
-        },
-        {
-            label: 'test3',
-            backgroundColor: "rgba(165,165,165,1)",
-            data: [{% for index, row in df.iterrows %}
-                {% if row.LargeItem == 3%}
-                '{{ row.kosu }}',
-                {% endif %}
-                {% endfor %}        ],
-        },
-        {
-            label: 'test4',
-            backgroundColor: "rgba(255,192,0,1)",
-            data: [{% for index, row in df.iterrows %}
-                {% if row.LargeItem == 4%}
-                '{{ row.kosu }}',
-                {% endif %}
-                {% endfor %}        ],
-        },
-        {
-            label: 'test5',
-            backgroundColor: "rgba(68,114,196,1)",
-            data: [{% for index, row in df.iterrows %}
-                {% if row.LargeItem == 5 %}
-                '{{ row.kosu }}',
-                {% endif %}
-                {% endfor %}        ],
-        },
-        {
-            label: 'test6',
-            backgroundColor: "rgba(112,173,71,1)",
-            data: [{% for index, row in df.iterrows %}
-                {% if row.LargeItem == 6%}
-                '{{ row.kosu }}',
-                {% endif %}
-                {% endfor %}        ],
-        },
-        {
-            label: 'test7',
-            backgroundColor: "rgba(37,94,145,1)",
-            data: [{% for index, row in df.iterrows %}
-                {% if row.LargeItem == 7%}
-                '{{ row.kosu }}',
-                {% endif %}
-                {% endfor %}        ],
-         }]
-    },
-    options: {
-        title: {
-            display: true,
-            text: '項目の数（〇〇別）',
-            padding:3,
-            fontSize: 26
-        },
-    scales: {
-        xAxes: [{
-        stacked: true, //積み上げ有効・無効設定
-        categoryPercentage:0.8
-        }],
-        yAxes: [{
-        stacked: true, // 積み上げ有効・無効設定
-        ticks: {
-        stepSize: 2 // ExcelのStep数に合わせる
-        }
-        }]
-    },
-    legend: {
-        labels: {
-            boxWidth:12,
-            padding:20
-        },
-        display: true
-    },
-    tooltips:{
-        mode:'label'
-    }
-}
-});
+                    datasets: [{
+                        label: 'test1',
+                        backgroundColor: "rgba(91,155,213,1)",
+                        data: [{% for index, row in df.iterrows %}
+                            {% if row.LargeItem == 1%}
+                                '{{ row.kosu }}',
+                            {% endif %}
+                        {% endfor %}        ],
+                    },
+                        {
+                            label: 'test7',
+                            backgroundColor: "rgba(37,94,145,1)",
+                            data: [{% for index, row in df.iterrows %}
+                                {% if row.LargeItem == 7%}
+                                    '{{ row.kosu }}',
+                                {% endif %}
+                            {% endfor %}        ],
+                        }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: '項目の数（〇〇別）',
+                        padding: 3,
+                        fontSize: 26
+                    },
+                    scales: {
+                        xAxes: [{
+                            stacked: true, //積み上げ有効・無効設定
+                            categoryPercentage: 0.8
+                        }],
+                        yAxes: [{
+                            stacked: true, // 積み上げ有効・無効設定
+                            ticks: {
+                                stepSize: 2 // ExcelのStep数に合わせる
+                            }
+                        }]
+                    },
+                    legend: {
+                        labels: {
+                            boxWidth: 12,
+                            padding: 20
+                        },
+                        display: true
+                    },
+                    tooltips: {
+                        mode: 'label'
+                    }
+                }
+            });
 
 
 
-{% endblock %}
+        {% endblock %}
 
 
-
-
-
-
-
-
-
-
-
-</script>
+    </script>
 
 {% endblock %}
 </body>

@@ -1,6 +1,7 @@
 from django import forms
 from .models import Schedule
 
+
 class BS4ScheduleForm(forms.ModelForm):
     """Bootstrapに対応するためのModelForm"""
 
@@ -27,6 +28,7 @@ class BS4ScheduleForm(forms.ModelForm):
         #             '工数は2以上で入れてね'
         #         )
         #     return kosu
+
 
 # 一括新規登録用のFormSet
 BS4ScheduleNewFormSet = forms.modelformset_factory(

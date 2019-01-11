@@ -227,7 +227,6 @@ LOGGING = {
     },
 }
 
-
 ###########
 # Email SendGrid setting #
 ###########
