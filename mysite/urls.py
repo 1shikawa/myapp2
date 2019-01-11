@@ -33,7 +33,7 @@ urlpatterns = [
 #Add URL maps to redirect the base URL to our application
 from django.views.generic import RedirectView
 urlpatterns += [
-    path('', RedirectView.as_view(url='/accounts/login', permanent=True)),
+    path('', RedirectView.as_view(url='/month_with_schedule', permanent=True)),
 ]
 
 

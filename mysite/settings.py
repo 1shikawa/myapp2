@@ -52,7 +52,6 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',  # 追記箇所 Django-allauth
     'bootstrap4',  # 追記箇所
     # 'bootstrapform',  # django-bootstrap-form# 追記箇所
-    # 'accounts', # 追記箇所
     'gunicorn',  # 追記箇所
     'mycalendar',  # 追記箇所
 ]
@@ -162,7 +161,7 @@ ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 # ログアウト確認を非表示
 ACCOUNT_LOGOUT_ON_GET = True
 
-# ユーザー登録確認メールは送信しない
+# ユーザー登録確認メールを送信する
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 # メールアドレスを必須項目にする
 ACCOUNT_EMAIL_REQUIRED = True
@@ -183,9 +182,9 @@ LOGOUT_REDIRECT_URL = '/'  # 追記箇所
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
-###########
-# Logging 本番用 #
-###########
+######################
+# Logging Production #
+######################
 
 LOGGING = {
     # バージョンは「1」固定
@@ -227,18 +226,18 @@ LOGGING = {
     },
 }
 
-###########
-# Email SendGrid setting #
-###########
+###########################
+# Email SendGrid settings #
+###########################
 EMAIL_BACKEND = 'sendgrid_backend.SendgridBackend'
 EMAIL_HOST = 'ishi-work.ml'
 DEFAULT_FROM_EMAIL = SERVER_EMAIL = 'notify@ishi-work.ml'
 SENDGRID_API_KEY = os.environ['SENDGRID_API_KEY']
 SENDGRID_SANDBOX_MODE_IN_DEBUG = False
 
-###########
-# Test setting #
-###########
+#################
+# Test settings #
+#################
 TEST_RUNNER = 'xmlrunner.extra.djangotestrunner.XMLTestRunner'
 TEST_OUTPUT_VERBOSE = 2
 TEST_OUTPUT_DIR = 'test-results'
