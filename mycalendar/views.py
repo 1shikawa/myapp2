@@ -364,7 +364,6 @@ class MonthlySumList(generic.ListView):
         keyword2 = self.request.GET.get('keyword2')
 
         # 年月指定がある場合の処理
-
         if keyword1 or keyword2:
             year, month = keyword1.split('-')
             # 指定年月の月初日
@@ -411,9 +410,10 @@ class Chart(generic.ListView):
         context = super().get_context_data(**kwargs)
         columns = ['date', 'LargeItem', 'kosu', 'register']
         df = pd.DataFrame(columns=columns)
-        # LargeItemをラベル変換するための対応付けmap
-        mapped = {1: '〇〇業務', 2: '■■業務', 3: '△△業務', 4: 'PJT/案件',
-                  5: '運用', 6: '障害対応', 7: '各種資料作成・入力'}
+        # DataFrameのLargeItem_idに基づきラベル付けするためのmap
+        mapped = {}
+        for i in LargeItem.objects.all():
+            mapped[i.id] = i.name
 
         for i in Schedule.objects.select_related():
             se = pd.Series([
@@ -427,11 +427,13 @@ class Chart(generic.ListView):
 
         # LargeItemとregisterでグループ化してkosuを合計(groupオブジェクト)→DataFrameオブジェクト化
         grouped_df = df.groupby(['LargeItem', 'register'])['kosu'].sum().reset_index()
+
+
         # LargeItemをmappedでラベル変換
         grouped_df['LargeItemLabel'] = grouped_df['LargeItem'].map(mapped)
         # 登録者、大項目で昇順ソート
         sorted_grouped_df = grouped_df.sort_values(by=["register", 'LargeItem'], ascending=True)
-        # 辞書にDateFrameオブジェクト追加
+        # context辞書にDateFrameオブジェクト追加
         context['df'] = sorted_grouped_df
         context['register'] = sorted_grouped_df['register'].drop_duplicates().reset_index()
         return context
@@ -441,11 +443,27 @@ class Chart(generic.ListView):
 @login_required
 def SumExport(request):
     """CSV出力ダウンロード"""
-    response = HttpResponse(content_type='text/csv', charset='utf-8-sig')
-    response['Content-Disposition'] = 'attachment; filename="SumExport.csv"'  # ファイルダウンロードを強制
-    # HttpResponseオブジェクトはファイルっぽいオブジェクトなので、csv.writerにそのまま渡せます。
-    writer = csv.writer(response)
-    writer.writerow(['id', '大項目', '中項目', '工数', '登録者'])
-    for s in Schedule.objects.all():
-        writer.writerow([s.pk, s.LargeItem, s.MiddleItem, s.kosu, s.register])
-    return response
+    csvexport = request.GET.get('csvexport')
+    if csvexport:
+        response = HttpResponse(content_type='text/csv', charset='utf-8-sig')
+        response['Content-Disposition'] = 'attachment; filename="SumExport.csv"'  # ファイルダウンロードを強制
+        # HttpResponseオブジェクトはファイルっぽいオブジェクトなので、csv.writerにそのまま渡せる。
+
+        year, month = csvexport.split('-')
+        # 指定年月の月初日
+        first_of_month = datetime.date(int(year), int(month), 1)
+        # 指定年月の月末日取得
+        last_of_month = datetime.date(int(year), int(month), 1) + relativedelta(months=1) + timedelta(days=-1)
+        # 指定月初から月末までのスケジュール取得
+        sum_of_month = Schedule.objects.select_related().filter(date__range=(first_of_month, last_of_month))
+        sum_of_Designated_month = sum_of_month.values('LargeItem__name', 'register').annotate(
+            MonthlySum=Sum('kosu')).order_by('register', 'LargeItem')
+
+        writer = csv.writer(response)
+        writer.writerow(['年月', '大項目', '総工数', '登録者'])
+        for sum in sum_of_Designated_month:
+            writer.writerow([csvexport, sum['LargeItem__name'], sum['MonthlySum'], sum['register']])
+        return response
+
+    else:
+        return HttpResponse('年月を指定してください。')

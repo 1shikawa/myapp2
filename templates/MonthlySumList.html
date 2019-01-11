@@ -9,43 +9,50 @@
 
 <body>
 {% block contents %}
-<div class="col-md-12 main">
-    <h4 class="page-header">月次集計一覧</h4>
-    <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'mycalendar:MonthlySumList' %}">
-        <input class="form-control mr-sm-2" type="month" min="2018-01" max="2018-12" aria-label="Search"
-               name="keyword1">
-        <input class="form-control mr-sm-2" type="text" aria-label="Search" name="keyword2">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-    <hr>
-    <div class="table-sm">
-        <table class="table table-bordered table-hover">
-            <thead>
-            <tr class="table-primary">
-                <th>期間</th>
-                <th>大項目</th>
-                <th>総工数</th>
-                <th>登録者</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for sum in MonthlySumList %}
-            <tr>
-                <td>{{ year_month }}</td>
-                <td>{{ sum.LargeItem__name }}</td>
-                <td>{{ sum.MonthlySum }}</td>
-                <td>{{ sum.register }}</td>
-            </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-        {% csrf_token %}
+    <div class="col-md-12 main">
+        <h4 class="page-header">月次集計一覧</h4>
+        <form class="form-inline my-2 my-lg-0" method="get" action="{% url 'mycalendar:MonthlySumList' %}">
+            <input class="form-control mr-sm-2" type="month" min="2018-01" max="2018-12" aria-label="Search"
+                   name="keyword1">
+            <input class="form-control mr-sm-2" type="text" aria-label="Search" name="keyword2">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        <hr>
+        <div class="table-sm">
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr class="table-primary">
+                    <th>期間</th>
+                    <th>大項目</th>
+                    <th>総工数</th>
+                    <th>登録者</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for sum in MonthlySumList %}
+                    <tr>
+                        <td>{{ year_month }}</td>
+                        <td>{{ sum.LargeItem__name }}</td>
+                        <td>{{ sum.MonthlySum }}</td>
+                        <td>{{ sum.register }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {% csrf_token %}
+        </div>
+        <div class="col-md-3">
+            <span>集計データを元にグラフ生成</span><br>
+            <a href="{% url 'mycalendar:Chart' %}" class="btn btn-success">グラフ描画</a><br>
+            <br>
+
+            <span>集計データをCSV出力</span><br>
+            <form action="{% url 'mycalendar:SumExport' %}" method="get">
+                <input class="form-control mr-sm-2" type="month" min="2018-01" max="2019-12" aria-label="Search"
+                       name="csvexport">
+                <button class="btn btn-primary " type="submit">CSV出力</button>
+            </form>
+        </div>
     </div>
-    <span>集計データを元にグラフ生成</span><br>
-    <a href="{% url 'mycalendar:Chart' %}" class="btn btn-success">グラフ描画</a><br>
-    <br>
-    <span>集計データをCSV出力</span><br>
-    <a href="{% url 'mycalendar:SumExport' %}" class="btn btn-primary">CSV出力</a>
-</div>
 {% endblock %}
 </body>
