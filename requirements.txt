@@ -26,3 +26,8 @@ six==1.11.0
 sqlparse==0.2.4
 urllib3==1.24.1
 django-sendgrid-v5==0.7.0
+
+django-datatables-view==1.17.0
+django-excel-response==2.0.3
+django-crispy-forms==1.7.2
+django-rest-framework==0.1.0

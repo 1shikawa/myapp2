@@ -1,5 +1,6 @@
 from django.urls import path, include
 from . import views
+from django.views.generic.base import TemplateView
 from django.contrib.auth import views as auth_views  # ログアウトに必要
 
 app_name = 'mycalendar'
@@ -23,6 +24,7 @@ urlpatterns = [
     #     'month_with_schedule/newadd/<int:year>/<int:month>/<int:day>',
     #     views.NewAdd.as_view(), name='NewAdd'
     # ),
+
     # 複数登録
     path(
         'month_with_schedule/NewMultiAdd/<int:year>/<int:month>/<int:day>',
@@ -71,4 +73,10 @@ urlpatterns = [
     path(
         'mycalendar/<int:year>/<int:month>/<int:day>/', views.MyCalendar.as_view(), name='mycalendar'
     ),
+
+    path('datatable', TemplateView.as_view(template_name='datatable.html'), name='datatable'),
+    path('schedule', views.ScheduleJsonView.as_view(), name='ScheduleJson'),
+    # path('print', views.PrintView.as_view(), name='print'),
+    path('excel', views.ExcelView.as_view(), name='excel'),
+    path('csv', views.CsvView.as_view(), name='csv'),
 ]
