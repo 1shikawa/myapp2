@@ -64,6 +64,11 @@ urlpatterns = [
         'Chart/', views.Chart.as_view(), name='Chart'
     ),
 
+    # 個別グラフ
+    path(
+        'Graph/', views.Graph.as_view(), name='Graph'
+    ),
+
     # CSVエクスポート
     path(
         'SumExport/', views.SumExport, name='SumExport'
@@ -74,6 +79,7 @@ urlpatterns = [
         'mycalendar/<int:year>/<int:month>/<int:day>/', views.MyCalendar.as_view(), name='mycalendar'
     ),
 
+    # dataTable機能
     path('datatable', TemplateView.as_view(template_name='datatable.html'), name='datatable'),
     path('schedule', views.ScheduleJsonView.as_view(), name='ScheduleJson'),
     # path('print', views.PrintView.as_view(), name='print'),

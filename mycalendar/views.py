@@ -427,8 +427,6 @@ class Chart(generic.ListView):
 
         # LargeItemとregisterでグループ化してkosuを合計(groupオブジェクト)→DataFrameオブジェクト化
         grouped_df = df.groupby(['LargeItem', 'register'])['kosu'].sum().reset_index()
-
-
         # LargeItemをmappedでラベル変換
         grouped_df['LargeItemLabel'] = grouped_df['LargeItem'].map(mapped)
         # 登録者、大項目で昇順ソート
@@ -467,6 +465,47 @@ def SumExport(request):
 
     else:
         return HttpResponse('年月を指定してください。')
+
+
+@method_decorator(login_required, name='dispatch')
+class Graph(generic.TemplateView):
+    """指定グラフ"""
+    model = Schedule
+    context_object_name = 'Graph'
+    template_name = 'MonthlySumList.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        graph1 = self.request.GET.get('graph1')
+        graph2 = self.request.GET.get('graph2')
+
+        columns = ['date', 'LargeItem', 'kosu', 'register']
+        df = pd.DataFrame(columns=columns)
+        # DataFrameのLargeItem_idに基づきラベル付けするためのmap
+        mapped = {}
+        for i in LargeItem.objects.all():
+            mapped[i.id] = i.name
+
+        for i in Schedule.objects.select_related():
+            se = pd.Series([
+                i.date,
+                i.LargeItem_id,
+                i.kosu,
+                i.register
+            ], columns)
+            # 1行ずつDataFrameに追加
+            df = df.append(se, ignore_index=True)
+
+        # LargeItemとregisterでグループ化してkosuを合計(groupオブジェクト)→DataFrameオブジェクト化
+        grouped_df = df.groupby(['LargeItem', 'register'])['kosu'].sum().reset_index()
+        # LargeItemをmappedでラベル変換
+        grouped_df['LargeItemLabel'] = grouped_df['LargeItem'].map(mapped)
+        # 登録者、大項目で昇順ソート
+        sorted_grouped_df = grouped_df.sort_values(by=["register", 'LargeItem'], ascending=True)
+        # context辞書にDateFrameオブジェクト追加
+        context['df'] = sorted_grouped_df
+        context['register'] = sorted_grouped_df['register'].drop_duplicates().reset_index()
+        return context
 
 
 
