@@ -7,7 +7,7 @@ import sys
 #pymysql.install_as_MySQLdb()
 
 if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.local")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.local_settings")
 
     # mysql文字長対応で以下の2行を追加する!
     from django.db.backends.mysql.schema import DatabaseSchemaEditor

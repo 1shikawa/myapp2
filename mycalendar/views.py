@@ -467,3 +467,53 @@ def SumExport(request):
 
     else:
         return HttpResponse('年月を指定してください。')
+
+
+
+from django_datatables_view.base_datatable_view import BaseDatatableView
+from excel_response import ExcelMixin
+
+# DataTablesにデータを提供するWebAPI
+# django-datatables-view
+# https://pypi.org/project/django-datatables-view/
+class ScheduleJsonView(BaseDatatableView):
+    # モデルの指定
+    model = Schedule
+    # フィールドの指定
+    columns = ['id', 'LargeItem', 'MiddleItem', 'SmallItem', 'date', 'kosu', 'register']
+
+    # 検索方法の指定：部分一致
+    def get_filter_method(self):
+        return super().FILTER_ICONTAINS
+
+
+# 印刷・Excel・CSV出力の基底クラス
+class BaseReportView(generic.ListView):
+    model = Schedule
+
+    # 選択データの取得
+    def get_queryset(self):
+        id_list = self.request.GET['id_list'].split('_')
+        result = Schedule.objects.filter(id__in=id_list)
+        return result
+
+
+# 印刷画面表示
+# class PrintView(BaseReportView):
+#     template_name = 'sample/print.html'
+
+# Excelダウンロード
+# django-excel-response
+# https://pypi.org/project/django-excel-response/
+class ExcelView(ExcelMixin, BaseReportView):
+
+    # 見出し行を日本語にする
+    def get_queryset(self):
+        header = [['id', '大項目', '中項目', '小項目', '概要', '詳細な説明', '備考','開始時間', '終了時間', '日付', '時間（分）', '総時間（分）', '登録者']]
+        body = [list(entry.values()) for entry in super().get_queryset().values()]
+        return header + body
+
+
+# CSVダウンロード
+class CsvView(ExcelView):
+    force_csv = True
