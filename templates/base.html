@@ -78,6 +78,9 @@
                 </li>
                 {#            {% endif %}#}
                 <li>
+                    <a class="nav-item nav-link active" href="{% url 'mycalendar:Graph' %}">グラフ表示</a>
+                </li>
+                <li>
                     <a class="nav-item nav-link active" href="{% url 'mycalendar:datatable' %}">全登録データ</a>
                 </li>
                 <li>
@@ -86,12 +89,11 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="{% url 'account_logout' %}">ログアウト</a>
                 </li>
-                {% block navbar %}
-                {% endblock %}
                 </ul>
                 <span style="color:white;" class="navbar-text navbar-right">ログイン中：{{ user.get_username }}</span>
             {% endif %}
-
+        {% block navbar %}
+        {% endblock %}
     </div>
 </nav>
 

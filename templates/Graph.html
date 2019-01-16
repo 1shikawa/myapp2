@@ -1,55 +1,50 @@
 {% extends 'base.html' %}
 <head>
-    {% block title %}月次集計一覧{% endblock %}
+    {% block title %}グラフ表示{% endblock %}
 </head>
-
-{% block extracss %}
-
-{% endblock %}
 
 <body>
 {% block contents %}
-    <div class="col-md-12 main">
+    <div class="col-md-3">
         <h4 class="page-header">月次集計一覧</h4>
-        <form class="form-inline my-2 my-lg-0" method="get" action="{% url 'mycalendar:MonthlySumList' %}">
-            <input class="form-control mr-sm-2" type="month" min="2018-01" max="201-12" aria-label="Search"
-                   name="keyword1">
-            <input class="form-control mr-sm-2" type="text" aria-label="Search" name="keyword2">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <p>入力データを元にグラフ生成</p>
         <div class="table-sm">
-            <table class="table table-bordered table-hover">
+            <table class="table table-bordered">
                 <thead>
                 <tr class="table-primary">
-                    <th>期間</th>
-                    <th>大項目</th>
-                    <th>総工数</th>
                     <th>登録者</th>
                 </tr>
                 </thead>
                 <tbody>
-                {% for sum in MonthlySumList %}
+                {% for user in users %}
                     <tr>
-                        <td>{{ year_month }}</td>
-                        <td>{{ sum.LargeItem__name }}</td>
-                        <td>{{ sum.MonthlySum }}</td>
-                        <td>{{ sum.register }}</td>
+                        <td>{{ user.email }}</td>
                     </tr>
                 {% endfor %}
                 </tbody>
             </table>
-            {% csrf_token %}
         </div>
+        {{ Graph }}
+        <form class="form-inline" action="{% url 'mycalendar:Graph' %}" method="get">
+            {#                <input class="form-control mr-sm-2" type="month" min="2018-01" max="2019-12" aria-label="Search"#}
+            {#                       aria-label="Search"#}
+            {#                       name="graph1">#}
+            <input class="form-control mr-sm-2" type="text" aria-label="Search" name="register">
+            <button class="btn btn-success my-2 my-sm-0" type="submit">グラフ描画</button>
+        </form>
+        <a href="{% url 'mycalendar:Chart' %}" class="btn btn-success">oldグラフ描画</a><br>
+    </div>
 
-        <div class="col-md-2">
-            <span>集計データをCSV出力</span><br>
-            <form action="{% url 'mycalendar:SumExport' %}" method="get">
-                <input class="form-control mr-sm-2" type="month" min="2018-01" max="2019-12" aria-label="Search"
-                       name="csvexport">
-                <button class="btn btn-primary " type="submit">CSV出力</button>
-            </form>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div>
+                    <canvas id="PieChart1"></canvas>
+                </div>
+            </div>
         </div>
     </div>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
     <script>

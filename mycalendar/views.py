@@ -11,6 +11,7 @@ from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.views import generic
 from mycalendar.models import Schedule, LargeItem
+from accounts.models import CustomUser
 from .forms import BS4ScheduleForm, BS4ScheduleNewFormSet, BS4ScheduleEditFormSet
 from .basecalendar import (
     MonthCalendarMixin, MonthWithScheduleMixin
@@ -469,48 +470,56 @@ def SumExport(request):
 
 @method_decorator(login_required, name='dispatch')
 class Graph(generic.TemplateView):
-    """指定グラフ"""
+    """指定グラフ表示"""
     model = Schedule
     context_object_name = 'Graph'
-    template_name = 'MonthlySumList.html'
+    template_name = 'Graph.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         graph1 = self.request.GET.get('graph1')
-        graph2 = self.request.GET.get('graph2')
+        register = self.request.GET.get('register')
 
-        columns = ['date', 'LargeItem', 'kosu', 'register']
-        df = pd.DataFrame(columns=columns)
-        # DataFrameのLargeItem_idに基づきラベル付けするためのmap
-        mapped = {}
-        for i in LargeItem.objects.all():
-            mapped[i.id] = i.name
+        context['users'] = CustomUser.objects.all()
 
-        for i in Schedule.objects.select_related():
-            se = pd.Series([
-                i.date,
-                i.LargeItem_id,
-                i.kosu,
-                i.register
-            ], columns)
-            # 1行ずつDataFrameに追加
-            df = df.append(se, ignore_index=True)
+        if register:
+            columns = ['date', 'LargeItem', 'kosu', 'register']
+            df = pd.DataFrame(columns=columns)
+            # DataFrameのLargeItem_idに基づきラベル付けするためのmap
+            mapped = {}
+            for item in LargeItem.objects.all():
+                mapped[item.id] = item.name
 
-        # LargeItemとregisterでグループ化してkosuを合計(groupオブジェクト)→DataFrameオブジェクト化
-        grouped_df = df.groupby(['LargeItem', 'register'])['kosu'].sum().reset_index()
-        # LargeItemをmappedでラベル変換
-        grouped_df['LargeItemLabel'] = grouped_df['LargeItem'].map(mapped)
-        # 登録者、大項目で昇順ソート
-        sorted_grouped_df = grouped_df.sort_values(by=["register", 'LargeItem'], ascending=True)
-        # context辞書にDateFrameオブジェクト追加
-        context['df'] = sorted_grouped_df
-        context['register'] = sorted_grouped_df['register'].drop_duplicates().reset_index()
-        return context
+            for i in Schedule.objects.select_related():
+                se = pd.Series([
+                    i.date,
+                    i.LargeItem_id,
+                    i.kosu,
+                    i.register
+                ], columns)
+                # 1行ずつDataFrameに追加
+                df = df.append(se, ignore_index=True)
 
+            df = df[df['register'].str.contains(register)]
+            # LargeItemとregisterでグループ化してkosuを合計(groupオブジェクト)→DataFrameオブジェクト化
+            grouped_df = df.groupby(['LargeItem', 'register'])['kosu'].sum().reset_index()
+            # LargeItemをmappedでラベル変換
+            grouped_df['LargeItemLabel'] = grouped_df['LargeItem'].map(mapped)
+            # 登録者、大項目で昇順ソート
+            sorted_grouped_df = grouped_df.sort_values(by=["register", 'LargeItem'], ascending=True)
+            # context辞書にDateFrameオブジェクト追加
+            context['df'] = sorted_grouped_df
+            context['register'] = sorted_grouped_df['register'].drop_duplicates().reset_index()
+            return context
+
+        else:
+            context['Graph'] = '登録者(ユーザーID)を指定してください。'
+            return context
 
 
 from django_datatables_view.base_datatable_view import BaseDatatableView
 from excel_response import ExcelMixin
+
 
 # DataTablesにデータを提供するWebAPI
 # django-datatables-view
@@ -538,8 +547,8 @@ class BaseReportView(generic.ListView):
 
 
 # 印刷画面表示
-# class PrintView(BaseReportView):
-#     template_name = 'sample/print.html'
+class PrintView(BaseReportView):
+    template_name = 'print.html'
 
 # Excelダウンロード
 # django-excel-response
@@ -548,7 +557,7 @@ class ExcelView(ExcelMixin, BaseReportView):
 
     # 見出し行を日本語にする
     def get_queryset(self):
-        header = [['id', '大項目', '中項目', '小項目', '概要', '詳細な説明', '備考','開始時間', '終了時間', '日付', '時間（分）', '総時間（分）', '登録者']]
+        header = [['id', '大項目', '中項目', '小項目', '概要', '詳細な説明', '備考', '開始時間', '終了時間', '日付', '時間（分）', '総時間（分）', '登録者']]
         body = [list(entry.values()) for entry in super().get_queryset().values()]
         return header + body
 

@@ -82,7 +82,7 @@ urlpatterns = [
     # dataTable機能
     path('datatable', TemplateView.as_view(template_name='datatable.html'), name='datatable'),
     path('schedule', views.ScheduleJsonView.as_view(), name='ScheduleJson'),
-    # path('print', views.PrintView.as_view(), name='print'),
+    path('print', views.PrintView.as_view(), name='print'),
     path('excel', views.ExcelView.as_view(), name='excel'),
     path('csv', views.CsvView.as_view(), name='csv'),
 ]
