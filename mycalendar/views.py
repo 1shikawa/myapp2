@@ -513,7 +513,7 @@ class Graph(generic.TemplateView):
             return context
 
         else:
-            context['Graph'] = '登録者(ユーザーID)を指定してください。'
+            context['Graph'] = '登録者(メールアドレスの@前)を指定してください。'
             return context
 
 
