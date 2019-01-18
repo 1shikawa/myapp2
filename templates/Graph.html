@@ -6,7 +6,7 @@
 <body>
 {% block contents %}
     <div class="col-md-3">
-        <h4 class="page-header">月次集計一覧</h4>
+        <h4 class="page-header">グラフ表示</h4>
         <p>入力データを元にグラフ生成</p>
         <div class="table-sm">
             <table class="table table-bordered">
@@ -30,6 +30,9 @@
             {#                       aria-label="Search"#}
             {#                       name="graph1">#}
             <input class="form-control mr-sm-2" type="text" aria-label="Search" name="register">
+            {% if  NoRegistration %}
+                {{ NoRegistration }}
+            {% endif %}
             <button class="btn btn-success my-2 my-sm-0" type="submit">グラフ描画</button>
         </form>
 {#        <a href="{% url 'mycalendar:Chart' %}" class="btn btn-success">oldグラフ描画</a><br>#}

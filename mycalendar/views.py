@@ -490,15 +490,20 @@ class Graph(generic.TemplateView):
             for item in LargeItem.objects.all():
                 mapped[item.id] = item.name
 
-            for i in Schedule.objects.select_related():
-                se = pd.Series([
-                    i.date,
-                    i.LargeItem_id,
-                    i.kosu,
-                    i.register
-                ], columns)
-                # 1行ずつDataFrameに追加
-                df = df.append(se, ignore_index=True)
+            register_schedule = Schedule.objects.select_related().filter(register=register)
+            if register_schedule:
+                for i in Schedule.objects.select_related().filter(register=register):
+                    se = pd.Series([
+                        i.date,
+                        i.LargeItem_id,
+                        i.kosu,
+                        i.register
+                    ], columns)
+                    # 1行ずつDataFrameに追加
+                    df = df.append(se, ignore_index=True)
+            else:
+                context['NoRegistration'] = '登録データがありません。'
+                return context
 
             df = df[df['register'].str.contains(register)]
             # LargeItemとregisterでグループ化してkosuを合計(groupオブジェクト)→DataFrameオブジェクト化
@@ -549,6 +554,7 @@ class BaseReportView(generic.ListView):
 # 印刷画面表示
 class PrintView(BaseReportView):
     template_name = 'print.html'
+
 
 # Excelダウンロード
 # django-excel-response
