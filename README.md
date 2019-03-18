@@ -1,8 +1,10 @@
 # 作業工数管理Webアプリ
 作業担当者がどのような案件作業にどのくらいの時間をかけているのかを管理者が数値的かつ視覚的に把握できるシステム\
-メイン：https://workermanagement.herokuapp.com/<br>
-管理サイト：https://workermanagement.herokuapp.com/admin<br>
-AWS環境：https://ishi-work.ml
+メイン環境（AWS）：https://ishi-work.ml
+メイン管理サイト（AWS）：https://ishi-work.ml/admin
+
+テスト環境（heroku）：https://workermanagement.herokuapp.com/<br>
+テスト管理サイト（heroku）：https://workermanagement.herokuapp.com/admin<br>
 
 # ユースケース
 ![3](https://user-images.githubusercontent.com/40058717/50887026-657ca300-1435-11e9-89fb-a23e1d3b7ae2.png)
