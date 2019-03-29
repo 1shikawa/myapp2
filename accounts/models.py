@@ -1,7 +1,8 @@
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-
+from django.conf import settings
+from annoying.fields import AutoOneToOneField
 
 
 class CustomUserManager(BaseUserManager):
@@ -63,3 +64,15 @@ class CustomUser(AbstractUser):
 
     objects = CustomUserManager()
 
+
+GENDER_CHOICES = (
+    ("女性", "女性"),
+    ("男性", "男性"),
+)
+class Profile(models.Model):
+    user = AutoOneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, primary_key=True)
+    name = models.CharField('氏名', max_length=255, blank=True, null=True)
+    gendar = models.CharField("性別", max_length=2, choices=GENDER_CHOICES, blank=True)
+
+    def __str__(self):
+        return str(self.user)

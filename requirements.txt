@@ -26,6 +26,7 @@ six==1.11.0
 sqlparse==0.2.4
 urllib3==1.24.1
 django-sendgrid-v5==0.7.0
+django-annoying=0.10.4
 
 django-datatables-view==1.17.0
 django-excel-response==2.0.3

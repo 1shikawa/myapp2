@@ -69,6 +69,31 @@ urlpatterns = [
         'Graph/', views.Graph.as_view(), name='Graph'
     ),
 
+    # プロフィール
+    path(
+        'profile/<int:pk>', views.ProfileView.as_view(), name='profile'
+    ),
+
+    path(
+        'profile/<int:pk>/update/', views.ProfileUpdateView.as_view(), name='profile_update'
+    ),
+
+    # お問い合わせ
+    path(
+        'contact/', views.Contact.as_view(), name='contact'
+    ),
+
+    # path(
+    #     'contact/', views.Contact, name='contact'
+    # ),
+
+    path(
+        'contact_confirm', views.ContactConfirm.as_view(), name='contact_confirm'
+    ),
+    path(
+        'contact_send', views.ContactSend.as_view(), name='contact_send'
+    ),
+
     # CSVエクスポート
     path(
         'SumExport/', views.SumExport, name='SumExport'

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block contents %}
+
+    <div class="container">
+        <div class="col-lg-6 col-md-6 col-sm-8">
+            <p>メールアドレス：{{ object.profile.user }}</p>
+            <p>氏名：{{ object.profile.name }}</p>
+            <p>性別：{{ object.profile.gendar }}</p>
+            <p>最終ログイン日時：{{ user.last_login }}</p>
+            <p>アカウント作成日：{{ user.date_joined }}</p>
+            <a class="btn btn-primary" href="{% url 'mycalendar:profile_update' user.id %}">更新</a>
+        </div>
+        <a class="btn btn-primary" href="{% url 'account_change_password' %}">パスワード変更</a>
+    </div>
+
+{% endblock %}

@@ -5,7 +5,7 @@ from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.forms import UserChangeForm
 from django.utils.translation import gettext_lazy as _
 
-from .models import CustomUser
+from .models import CustomUser, Profile
 
 class CustomUserCreationForm(forms.ModelForm):
     class Meta:
@@ -61,4 +61,12 @@ class CustomUserAdmin(UserAdmin):
     ordering = ('email',)
 
 
+class ProfileAdmin(admin.ModelAdmin):
+    fieldsets = (
+        ('プロフィール',      {'fields': ('user', 'name', 'gendar')}),
+        # ('gendar',      {'fields': ('gendar',)}),
+    )
+
+
 admin.site.register(CustomUser, CustomUserAdmin)
+admin.site.register(Profile, ProfileAdmin)
