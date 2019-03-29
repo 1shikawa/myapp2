@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',  # 追記箇所 Django-allauth
     'accounts.apps.AccountsConfig',  # 追記箇所 Django-allauth
     'bootstrap4',  # 追記箇所
+    'formtools', # 追記箇所
     # 'bootstrapform',  # django-bootstrap-form# 追記箇所
     'gunicorn',  # 追記箇所
     'mycalendar',  # 追記箇所

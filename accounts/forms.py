@@ -16,11 +16,11 @@ class ProfileUpdateForm(forms.ModelForm):
 
 
 class ContactForm(forms.Form):
-    name = forms.CharField(max_length=255)
-    email = forms.EmailField
-    message = forms.CharField(widget=forms.Textarea) # 問い合わせ内容
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(self, *args, **kwargs)
-        self.fields['name'].widget.attrs['class'] = 'form-control'
-        self.fields['name'].widget.attrs['placeholder'] = 'お名前'
+    name = forms.CharField(label='お名前', max_length=255)
+    email = forms.EmailField(label='メールアドレス')
+    message = forms.CharField(label='お問い合わせ内容', widget=forms.Textarea)
+    #
+    # def __init__(self, *args, **kwargs):
+    #     super().__init__(self, *args, **kwargs)
+    #     self.fields['name'].widget.attrs['class'] = 'form-control'
+    #     self.fields['name'].widget.attrs['placeholder'] = 'お名前'

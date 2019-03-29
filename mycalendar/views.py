@@ -6,7 +6,7 @@ from datetime import timedelta
 from django.utils.decorators import method_decorator  # @method_decoratorに使用
 from django.contrib.auth.decorators import login_required  # @method_decoratorに使用
 from django.contrib import messages  # メッセージフレームワーク
-from django.shortcuts import render, redirect, resolve_url
+from django.shortcuts import reverse, redirect, resolve_url
 from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.views import generic
@@ -14,6 +14,8 @@ from mycalendar.models import Schedule, LargeItem
 from accounts.models import CustomUser, Profile
 from .forms import BS4ScheduleForm, BS4ScheduleNewFormSet, BS4ScheduleEditFormSet
 from accounts.forms import ProfileUpdateForm, ContactForm
+from formtools.preview import FormPreview
+from django.core.mail import send_mail
 from .basecalendar import (
     MonthCalendarMixin, MonthWithScheduleMixin
 )
@@ -589,43 +591,43 @@ class ProfileUpdateView(generic.UpdateView):
         return resolve_url('mycalendar:profile', pk=self.kwargs['pk'])
 
 
-class Contact(generic.FormView):
-    template_name = 'account/contact.html'
-    form_class = ContactForm
-    success_url = reverse_lazy('mycalendar:contact_confirm')
-
-    def get_form(self, form_class=None):
-        # contact.htmlでデータ送信した場合
-        if 'name' in self.request.POST:
-            form_data = self.request.POST
-        # お問い合わせフォーム確認画面から「戻る」リンクを押した場合や
-        # 初回の入力欄表示は以下の表示。
-        # セッションにユーザーデータがあれば、それをフォームに束縛
-        else:
-            form_data = self.request.session.get('form_data', None)
-
-        return self.form_class(form_data)
-
-    def form_valid(self, form):
-        # 入力した値を、セッションに保持
-        self.request.session['form_data'] = self.request.POST
-        return super().form_valid(form)
-
-# def Contact(request):
-#     if request.method == 'GET':
-#         form = ContactForm(request.session.get('form_data'))
+# class Contact(generic.FormView):
+#     template_name = 'account/contact.html'
+#     form_class = ContactForm
+#     success_url = reverse_lazy('mycalendar:contact_confirm')
 #
-#     else:
-#         form = ContactForm(request.POST)
-#         if form_valid():
-#             request.session['form_data'] = request.POST
-#             return redirect('mycalendar:contact_confirm')
+#     def get_form(self, form_class=None):
+#         # contact.hmltで、データを送信した場合
+#         if 'name' in self.request.POST:
+#             form_data = self.request.POST
 #
-#     context = {
-#         'form': form
-#     }
-#     return render(request,'account/contact.html', context)
+#         # お問い合わせフォーム確認画面から「戻る」リンクを押した場合や
+#         # 初回の入力欄表示は以下の表示。
+#         # セッションにユーザーデータがあれば、それをフォームに束縛
+#         else:
+#             form_data = self.request.session.get('form_data', None)
+#
+#         return self.form_class(form_data)
+#
+#     def form_valid(self, form):
+#         # 入力した値を、セッションに保存
+#         self.request.session['form_data'] = self.request.POST
+#         return super().form_valid(form)
 
+class Contact(FormPreview):
+    preview_template = 'account/contact_confirm.html'
+    form_template = 'account/contact.html'
+
+    def done(self, request, cleaned_data):
+        subject = cleaned_data['name']
+        message = cleaned_data['message']
+        from_email = cleaned_data['email']
+        # to = [settings.EMAIL_HOST_USER]
+        to = ['toru-ishikawa@gmocloud.com']
+        send_mail(subject, message, from_email, to)
+        messages.success(request, 'お問い合わせありがとうございます。')
+
+        return redirect(reverse('mycalendar:month_with_schedule', args=(), kwargs={}))
 
 
 class ContactConfirm(generic.TemplateView):
@@ -649,6 +651,7 @@ class ContactSend(generic.FormView):
         message = form_data['message']
         from_email = form_data['email']
         to = [settings.EMAIL_HOST_USER]
+        to = ['toru-ishikawa@gmocloud.com']
         send_mail(subject, message, from_email, to)
 
         return self.form_class(form_data)

@@ -1,6 +1,7 @@
 from django.urls import path, include
 from . import views
 from django.views.generic.base import TemplateView
+from accounts.forms import ContactForm
 from django.contrib.auth import views as auth_views  # ログアウトに必要
 
 app_name = 'mycalendar'
@@ -80,7 +81,7 @@ urlpatterns = [
 
     # お問い合わせ
     path(
-        'contact/', views.Contact.as_view(), name='contact'
+        'contact/', views.Contact(ContactForm), name='contact'
     ),
 
     # path(
