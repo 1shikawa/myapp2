@@ -9,11 +9,11 @@
             <p>氏名：{{ object.profile.name }}</p>
             <p>性別：{{ object.profile.gendar }}</p>
             <p>最終ログイン日時：{{ user.last_login }}</p>
-            <p>アカウント作成日：{{ user.date_joined }}</p>
+            <p>アカウント作成日時：{{ user.date_joined }}</p>
             <a class="btn btn-primary" href="{% url 'mycalendar:profile_update' user.id %}">更新</a>
         </div>
-        <a class="btn btn-primary" href="{% url 'account_change_password' %}">パスワード変更</a>
-        <a class="btn btn-primary" href="{% url 'mycalendar:contact' %}">お問い合わせ</a>
+            <a class="btn btn-primary" href="{% url 'account_change_password' %}">パスワード変更</a>
+            <a class="btn btn-primary" href="{% url 'mycalendar:contact' %}">お問い合わせ</a>
     </div>
 
 {% endblock %}
