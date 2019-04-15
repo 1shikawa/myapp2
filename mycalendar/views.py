@@ -544,6 +544,7 @@ class ScheduleJsonView(BaseDatatableView):
 
 
 # 印刷・Excel・CSV出力の基底クラス
+@method_decorator(login_required, name='dispatch')
 class BaseReportView(generic.ListView):
     model = Schedule
 
