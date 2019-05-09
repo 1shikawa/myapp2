@@ -1,4 +1,4 @@
-# 作業工数管理Webアプリ
+# 作業工数管理Webアプリ→https://github.com/1shikawa/django-service-ecs　へ移行
 作業担当者がどのような案件作業にどのくらいの時間をかけているのかを管理者が数値的かつ視覚的に把握できるシステム\
 メイン環境（AWS）：https://ishi-work.ml<br>
 メイン管理サイト（AWS）：https://ishi-work.ml/admin
